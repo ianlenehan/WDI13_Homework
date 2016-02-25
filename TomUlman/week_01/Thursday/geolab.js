@@ -111,16 +111,16 @@ var isIsosceles = function(t) {
 
    if (( a > b) && (a > c)) {
      longest = a;
-     a = shortA;
-     b = shortB;
+     shortA = b;
+     shortB = c;
    } else if (( b > a) && (b > c)) {
      longest = b;
-     a = shortA;
-     b = shortB;
+     shortA = a;
+     shortB = c;
    } else if (( c > a) && (c > b)) {
-     longest === c;
-     a = shortA;
-     b = shortB;
+     longest = c;
+     shortA = a;
+     shortB = b;
    } else {
      return s + " cannot be obtuse";
    }
