@@ -19,21 +19,25 @@ You should write a basic story through a series of JavaScript commands that show
 var bank = {
   accounts: [],
   addAccount: function(n, b) {
-    // Method that adds a new account and add it to the accounts array.
-    bank.accounts.push({
-      name: n,
-      balance: b,
-      deposit: function(amount) {
-        this.balance += amount;
-      },
-      withdraw: function(amount) {
-        this.balance -= amount;
-      }
-    });
-    console.log("New Account! Total accounts: " + bank.accounts.length);
+    // Adds a new account to the accounts array.
+    if (bank.getAccount(n) >=0) {
+      // Check if account name already exists (this would break getAccount method)
+      return "Cannot add account: an account with that name already exists."
+    } else {
+      bank.accounts.push({
+        name: n,
+        balance: b,
+        deposit: function(amount) {
+          this.balance += amount;
+        },
+        withdraw: function(amount) {
+          this.balance -= amount;
+        }
+      })
+    }
   },
   totalBalance: function() {
-    // Method that returns total sum of accounts.
+    // Returns sum of all account balances
     var total = 0;
     for (var i = 0; i < bank.accounts.length; i++) {
       total = total + bank.accounts[i].balance;
@@ -41,7 +45,8 @@ var bank = {
     console.log("Total function called. Total = " + total);
     return total;
   },
-  getAccount: function(name) { // Passes in account name and returns the index of the account
+  getAccount: function(name) {
+    // Passes in account name and returns the index of the account
     for (var i = 0; i < bank.accounts.length; i++) {
       if (name === bank.accounts[i].name) {
         return i;
@@ -51,4 +56,4 @@ var bank = {
     }
   },
 
-}
+};
