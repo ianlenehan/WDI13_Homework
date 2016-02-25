@@ -78,12 +78,12 @@ var bank = {
     var recipientIndex = bank.getAccount(receiver); // looks up recipient name and assigns index
     if (bank.accounts[senderIndex].checkNegative(bank.accounts[senderIndex].balance, value) === true) {
       // checkNegative called -- transaction would result in negative balance
-        return "Cannot transfer. Insufficient Funds."
+      return "Cannot transfer. Insufficient Funds."
     } else {
       // checkNegative called -- transaction would not result in negative balance
-        bank.accounts[senderIndex].balance -= value; // transfer value
-        bank.accounts[recipientIndex].balance += value;
-        return "Transfer Completed."
+      bank.accounts[senderIndex].balance -= value; // transfer value
+      bank.accounts[recipientIndex].balance += value;
+      return "Transfer Completed."
     }
   }
 
