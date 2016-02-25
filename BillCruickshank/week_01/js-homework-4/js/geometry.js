@@ -71,7 +71,7 @@ var isEquilateral =  function (t){
   if (isValidTriangle(t)){
     return (t.sideA >= 0) && (t.sideA === t.sideB) && (t.sideB === t.sideC);
   } else {
-    false;
+    return undefined;
   }
 }
 
@@ -81,7 +81,7 @@ var isIsosceles =  function (t){
         || (t.sideB === t.sideC)
         || (t.sideC === t.sideA);
   } else {
-    return false;
+    return undefined;
   }
 }
 
@@ -104,7 +104,7 @@ var isObtuse = function(t) {
     || (a*a - b*b + c*c) < 0
     || (-a*a + b*b + c*c) < 0
   } else {
-    return false;
+    return undefined;
   }
 }
 
