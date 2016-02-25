@@ -32,6 +32,8 @@ var bank = {
     },
 
     addAccount: function(n, b) {
+        // var newAccount = {name:n, balance:b};
+        // bank.accounts.push(newAccount);
         bank.accounts.push({name:n, balance:b});
     },
 
@@ -57,11 +59,12 @@ var bank = {
           (bank.accounts[sender].balance) < 0){
             alert("illegal operation, accounts cannot be" +
             " negative and you cannot transfer in excess");
-            bank.accounts[receiver].balance += amount;
-            bank.accounts[sender].balance -= amount;
-          } else {
-        return bank.accounts[sender].balance, bank.accounts[receiver].balance;
-          }
+          bank.accounts[receiver].balance += amount;
+          bank.accounts[sender].balance -= amount;
+        } else {
+        return bank.accounts[sender].balance,
+        bank.accounts[receiver].balance;
+        }
     }
 };
 

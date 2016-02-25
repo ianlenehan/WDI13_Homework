@@ -11,19 +11,19 @@
 //
 
 var rectangle = {
-  length: 4,
+   length: 4,
    width: 5
-  };
+};
 
 
 var isSquare = function(r) {
   if (r.length === r.width){
-      console.log ("is square");
+    console.log ("is square");
     return (r + " is a square.");
   } else {
-      console.log ("is not ");
-    return (r + " is not a square.");
-    }
+  console.log ("is not ");
+  return (r + " is not a square.");
+  }
 };
 //isSquare(rectangle);
 
@@ -56,16 +56,16 @@ var triangle = {
   sideA: 11,
   sideB: 6,
   sideC: 8
- };
+};
 
 var isEquilateral = function(t) {
    var a = t.sideA;
    var b = t.sideB;
    var c = t.sideC;
-   if ((a === b) && (a === c)) {
+    if ((a === b) && (a === c)) {
      return true;
    } else {
-     return false;
+   return false;
    }
 };
  //isEquilateral(triangle);
@@ -74,10 +74,10 @@ var isEquilateral = function(t) {
 var isIsosceles = function(t) {
   var a = ((t.sideA === t.sideB) || (t.sideA === t.sideC));
   var b = ((t.sideB === t.sideA) || (t.sideB === t.sideC));
-  if ( (a) || (b) ) {
-    return true;
+    if ( (a) || (b) ) {
+      return true;
   } else {
-    return false;
+  return false;
   }
 };
  //isIsosceles(triangle);
