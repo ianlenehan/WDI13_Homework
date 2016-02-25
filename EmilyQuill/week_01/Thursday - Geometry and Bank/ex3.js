@@ -20,18 +20,36 @@ var bank = {
   accounts: [],
   addAccount: function(n, b) {
     // Adds a new account to the accounts array.
-    if (bank.getAccount(n) >=0) {
+    if (bank.getAccount(n) >= 0) {
       // Check if account name already exists (this would break getAccount method)
-      return "Cannot add account: an account with that name already exists."
+      return "Cannot add account: an account with that name already exists.";
+    } else if (b < 0) {
+      return "Cannot add account: account balance must not be negative";
     } else {
       bank.accounts.push({
         name: n,
         balance: b,
         deposit: function(amount) {
-          this.balance += amount;
+          if (amount < 0) {
+            return "Error: deposit must be a positive value.";
+          } else {
+            this.balance += amount;
+          }
         },
         withdraw: function(amount) {
-          this.balance -= amount;
+          if (this.checkNegative(this.balance, amount) === true) {
+            return "Cannot withdraw: account balance must not be negative. " +
+              "You can withdraw up to $" + this.balance;
+          } else {
+            this.balance -= amount;
+          }
+        },
+        checkNegative: function(balance, change) {
+          if (balance - change < 0) {
+            return true;
+          } else {
+            return false;
+          }
         }
       })
     }
@@ -42,18 +60,29 @@ var bank = {
     for (var i = 0; i < bank.accounts.length; i++) {
       total = total + bank.accounts[i].balance;
     }
-    console.log("Total function called. Total = " + total);
     return total;
   },
-  getAccount: function(name) {
+  getAccount: function(n) {
     // Passes in account name and returns the index of the account
     for (var i = 0; i < bank.accounts.length; i++) {
-      if (name === bank.accounts[i].name) {
+      if (n == bank.accounts[i].name) {
         return i;
       } else {
-        return "No account found for " + name;
+        // do nothing, keep looking! (previously this line was 'return false' - oops)
       }
     }
   },
+
+  transfer: function(sender, receiver, value) {
+    var senderIndex = bank.getAccount(sender);
+    var recipientIndex = bank.getAccount(receiver);
+    if (bank.accounts[senderIndex].checkNegative(bank.accounts[senderIndex].balance, value) === true) {
+        return "Cannot transfer. Insufficient Funds."
+    } else {
+        bank.accounts[senderIndex].balance -= value;
+        bank.accounts[recipientIndex].balance += value;
+        return "Transfer Completed."
+    }
+  }
 
 };
