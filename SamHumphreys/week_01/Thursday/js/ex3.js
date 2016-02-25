@@ -23,6 +23,7 @@ var jsBank = [
   accountNumber: 1122,
   balance: 890}
 ];
+var searchResult = -1;
 
 // A function to find the array index based on a client account number
 
@@ -31,13 +32,10 @@ var findClientFromNumber = function(input){
   for (i=0; i<jsBank.length; i++) {
     if (input === jsBank[i].accountNumber){
       searchResult = i;
-      console.log(jsBank[i].name + ", account number " + jsBank[i].accountNumber +
-                " is in jsBank at index " + searchResult);
       return searchResult;
     }
   }
-  console.log(input + " is not a valid account number.");
-  return searchResult;
+  return openAccount();
 }
 
 // A function to find the array index based on a client name
@@ -47,13 +45,10 @@ var findClientFromName = function(input){
   for (i=0; i<jsBank.length; i++) {
     if (input === jsBank[i].name){
       searchResult = i;
-      console.log(jsBank[i].name + ", account number " + jsBank[i].accountNumber +
-                " is in jsBank at index " + searchResult);
       return searchResult;
     }
   }
-  console.log(name + " is not a client");
-  return searchResult;
+  return openAccount();
 }
 
 var getClientCode = function(input) {
@@ -67,10 +62,21 @@ var getClientCode = function(input) {
 }
 
 
-// var getBalance = function(number) {
-//   var balance = jsBank[clientNumber].balance;
-//   return balance;
-// }
+var getBalance = function(input) {
+  var findCode = getClientCode(input);
+  jsBkAc = jsBank[findCode];
+  var balance = jsBkAc.balance;
+  return balance;
+}
+
+var checkBalance = function(input) {
+  var findCode = getClientCode(input);
+  jsBkAc = jsBank[findCode];
+  if (jsBkAc === undefined) {return openAccount()};
+  var balance = jsBkAc.balance;
+  console.log("The balance in account number " + jsBkAc.accountNumber +
+                " in the name of " + jsBkAc.name + " is " + balance);
+}
 
 // Accounts
 //
@@ -80,23 +86,62 @@ var getClientCode = function(input) {
 
 function deposit(finder, amount) {
   var findCode = getClientCode(finder);
-  jsBank[findCode].balance += amount;
-  console.log(jsBank[findCode].name + "'s new balance in account " +
-                jsBank[findCode].accountNumber + " is " +
-                jsBank[findCode].balance);
+  jsBkAc = jsBank[findCode];
+  jsBkAc.balance += amount;
+  console.log(jsBkAc.name + "'s new balance in account " +
+                jsBkAc.accountNumber + " is " +
+                jsBkAc.balance);
 }
 
-function withdraw(clientName, amount){
-  var clientNumber = findClientNumber(clientName);
-  var clientBalance = getBalance(clientNumber);
-  if (clientBalance < amount) {
-    console.log(clientName + " has insufficient funds for that withdrawal");
-    break;
+function withdraw(finder, amount){
+  var findCode = getClientCode(finder);
+  jsBkAc = jsBank[findCode];
+  var clientBalance = getBalance(findCode);
+  if (clientBalance >= amount) {
+    jsBkAc.balance -= amount;
+    console.log(jsBkAc.name + ' has withdrawn ' + amount +
+                  ' from their account number ' +
+                   jsBkAc.accountNumber);
+    console.log("The new account balance of account " +
+                  jsBkAc.accountNumber + ' is ' +
+                  jsBkAc.balance);
+  } else {
+    console.log('Account number ' + jsBkAc.accountNumber +
+                  ' in the name ' + jsBkAc.name +
+                  ' has insufficient funds.');
+    console.log(jsBkAc.name + ' can not withdraw $' + amount +
+                  '; the balance is only $' + clientBalance);
+    return;
   }
-
-
 }
 
+//make a random account number, and check that it doesn't already exist.
+//If it already exists then try again, otherwise return the random number.
+
+function createRandomAccountNum() {
+}
+
+function openAccount() {
+  var wantToOpen = prompt ("Would you like to open an account? y or n");
+  if (wantToOpen === "y") {
+    var newName = prompt("Please enter the new account name");
+    var findCode = findClientFromName(newName);
+    var jsBkAc = jsBank[findCode];
+    if (findCode !== -1) {
+      console.log("That account already exists, account number " +
+                    jsBkAc.accountNumber + " in the name " + jsBkAc.name);
+    }
+    if (findCode === -1) {
+      jsBank.push({name: newName, accountNumber: 0, balance: 0});
+      console.log(jsBank);
+    }
+  } else if (wantToOpen === "n") {
+    console.log("Ok, have a nice day...");
+  } else {
+    alert("Please enter either y or n");
+    return openAccount();
+  }
+}
 
 // There is no need to write a user interface. Make sure functions return
 //  values -- you may also have your functions console.log() values to help
@@ -110,13 +155,6 @@ function withdraw(clientName, amount){
 // Tips
 //
 // Don't overthink this. Shorter code is probably the answer.
-
-
-
-
-
-
-
 
 // Bonus
 //
