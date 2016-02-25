@@ -74,15 +74,29 @@ var bank = {
   },
 
   transfer: function(sender, receiver, value) {
-    var senderIndex = bank.getAccount(sender);
-    var recipientIndex = bank.getAccount(receiver);
+    var senderIndex = bank.getAccount(sender); // looks up sender name and assigns index
+    var recipientIndex = bank.getAccount(receiver); // looks up recipient name and assigns index
     if (bank.accounts[senderIndex].checkNegative(bank.accounts[senderIndex].balance, value) === true) {
+      // checkNegative called -- transaction would result in negative balance
         return "Cannot transfer. Insufficient Funds."
     } else {
-        bank.accounts[senderIndex].balance -= value;
+      // checkNegative called -- transaction would not result in negative balance
+        bank.accounts[senderIndex].balance -= value; // transfer value
         bank.accounts[recipientIndex].balance += value;
         return "Transfer Completed."
     }
   }
 
 };
+
+// Story calls:
+// bank.addAccount("Emily",800);
+// bank.addAccount("Henry",55);
+// bank.accounts;
+// bank.totalBalance;
+// bank.getAccount("Emily");
+// bank.accounts[bank.getAccount("Emily")].withdraw(400);
+// bank.accounts[bank.getAccount("Henry")].deposit(45);
+// bank.accounts;
+// bank.accounts[bank.getAccount("Emily")].withdraw(500);
+// bank.transfer("Emily","Henry",100);
