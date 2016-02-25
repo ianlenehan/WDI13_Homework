@@ -67,7 +67,7 @@ var isEquilateral = function(t) {
    } else {
      return false;
    }
-}
+};
  //isEquilateral(triangle);
 
 
@@ -79,7 +79,7 @@ var isIsosceles = function(t) {
   } else {
     return false;
   }
- }
+};
  //isIsosceles(triangle);
 
 
@@ -90,7 +90,7 @@ var isIsosceles = function(t) {
   var sc = (a+b-c)/2;
 
   return Math.sqrt(s*sa*sb*sc);
-}
+};
 
  var areaTri = function(t) {
    var a = t.sideA;
@@ -130,4 +130,4 @@ var isIsosceles = function(t) {
    } else {
      return s + " is not obtuse";
    }
-}
+};

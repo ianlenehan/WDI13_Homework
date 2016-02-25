@@ -43,7 +43,7 @@ var bank = {
     withdraw: function(bankacc, withdrawal) {
         bank.accounts[bankacc].balance -= withdrawal;
           if (bank.accounts[bankacc].balance < 0){
-            alert("account cannot be negative")
+            alert("account cannot be negative");
             bank.accounts[bankacc].balance += withdrawal;
           } else {
         return bank.accounts[bankacc].balance;
@@ -53,10 +53,10 @@ var bank = {
     transfer: function(sender, receiver, amount) {
         bank.accounts[sender].balance += amount;
         bank.accounts[receiver].balance -= amount;
-          if ((bank.accounts[receiver].balance) < 0
-          || (bank.accounts[sender].balance) < 0){
+          if ((bank.accounts[receiver].balance) < 0||
+          (bank.accounts[sender].balance) < 0){
             alert("illegal operation, accounts cannot be" +
-            " negative and you cannot transfer in excess")
+            " negative and you cannot transfer in excess");
             bank.accounts[receiver].balance += amount;
             bank.accounts[sender].balance -= amount;
           } else {
