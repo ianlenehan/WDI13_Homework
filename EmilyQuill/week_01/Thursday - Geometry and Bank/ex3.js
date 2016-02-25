@@ -18,27 +18,37 @@ You should write a basic story through a series of JavaScript commands that show
 
 var bank = {
   accounts: [],
-  addAccount: function(o, b) {
+  addAccount: function(n, b) {
     // Method that adds a new account and add it to the accounts array.
-    bank.accounts.push({owner: o,
-                        balance: b,
-                        deposit: function(amount) {
-                            this.balance += amount;
-                        },
-                        withdraw: function(amount) {
-                            this.balance -= amount;
-                        }
-                      });
-    console.log("New Account! All accounts: " + bank.accounts);
+    bank.accounts.push({
+      name: n,
+      balance: b,
+      deposit: function(amount) {
+        this.balance += amount;
+      },
+      withdraw: function(amount) {
+        this.balance -= amount;
+      }
+    });
+    console.log("New Account! Total accounts: " + bank.accounts.length);
   },
-  totalAccounts: function() {
+  totalBalance: function() {
     // Method that returns total sum of accounts.
     var total = 0;
-    for (var i=0; i < bank.accounts.length; i++) {
-      total = total + accounts[i].balance;
+    for (var i = 0; i < bank.accounts.length; i++) {
+      total = total + bank.accounts[i].balance;
     }
     console.log("Total function called. Total = " + total);
     return total;
+  },
+  getAccount: function(name) { // Passes in account name and returns the index of the account
+    for (var i = 0; i < bank.accounts.length; i++) {
+      if (name === bank.accounts[i].name) {
+        return i;
+      } else {
+        return "No account found for " + name;
+      }
+    }
   },
 
 }
