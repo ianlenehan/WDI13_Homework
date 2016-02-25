@@ -44,6 +44,9 @@ bank = {
 // There is no need to write a user interface. Make sure functions return values -- you may also have your functions console.log() values to help you see your code working.
 //
 
+
+// Initially had these two outside the bank. That doesn't quite make sense though.
+
   deposit : function (account, amount){
     if(amount < 0){
       console.log("ಠ_ಠ " + account.name + ", deposits are for positive amounts ಠ_ಠ");
