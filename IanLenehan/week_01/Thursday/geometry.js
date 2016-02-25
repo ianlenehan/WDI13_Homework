@@ -5,8 +5,11 @@ Given the following a rectangle object like the one below,
 write the following functions:
 
 isSquare - Returns whether the rectangle is a square or not
+
 area - Returns the area of the rectangle
+
 perimeter - Returns the perimeter of the rectangle
+
 var rectangle = {
   length: 4,
   width: 4
@@ -15,11 +18,11 @@ var rectangle = {
 
 var rectangle = {
   length: 4,
-  width: 4
+  width: 2
 };
 
-var isSquare = function (shape) {
-  if (shape.length === shape.width) {
+var isSquare = function (s) {
+  if (s.length === s.width) {
     console.log("Your shape is a square!");
     return true;
   } else {
@@ -29,6 +32,22 @@ var isSquare = function (shape) {
 };
 
 isSquare(rectangle);
+
+var area = function (s) {
+  var myArea = s.length * s.width;
+  console.log("The area of your shape is " + myArea);
+  return myArea;
+}
+
+area(rectangle);
+
+var perimeter = function (s) {
+  var myPerimeter = 2 * (s.length + s.width);
+  console.log("The perimeter of your shape is " + myPerimeter);
+  return myPerimeter;
+}
+
+perimeter(rectangle);
 
 /*
 Part 2, Triangle
@@ -77,6 +96,30 @@ var isIsosceles = function (t) {
 }
 
 isIsosceles(triangle);
+
+// The following calculates the area of a triangle
+
+var herons = function (a, b, c) {
+  var s = (a+b+c)/2;
+  //when can any of these three be negative?
+  //hint: when is a triangle 'okay'?
+  var sa = (-a+b+c)/2;
+  var sb = (a-b+c)/2;
+  var sc = (a+b-c)/2;
+
+  return Math.sqrt(s*sa*sb*sc);
+}
+
+var triangleArea = function(t) {
+  var a = t.sideA;
+  var b = t.sideB;
+  var c = t.sideC;
+  var tArea = herons(a,b,c);
+  console.log("The area of the triangle is " + tArea);
+}
+
+triangleArea(triangle);
+
 // I am writing this function to pass into isObtuse
 
 var longestSide = function(t) {
