@@ -4,23 +4,56 @@
 // The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
 
 
-var mta = {
-  enLine: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
-  elLine: ['8th', '6th', 'Union Square', '3rd', '1st'],
-  sixLine: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
+var mta = [{
+    name: 'n',
+    stops: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']},
+    {name: 'l',
+    stops: ['8th', '6th', 'Union Square', '3rd', '1st']},
+    {name: '6',
+    stops: ['Grand Central', '33rd', '28th', '23rd', 'Union Square',
+          'Astor Place']}
+]
+
+var trip = {
+  startLine: '',
+  startStation: '',
+  stopLine: '',
+  stopStation: ''
 }
 
-//change the line input from a letter to my line names
+//input a line letter, output the array number in mta
+//eg getLine('n'); returns 0
+//works
 var getLine = function (input) {
-  if (input === "n" || input === "N") {
-    return "enLine";
-  } else if (input === "l" || input === "L") {
-    return "elLine";
-  } else if (input === "6" || input === 6) {
-    return "sixLine";
-  } else {
-    console.log("not a valid line");
+  for (var i = 0; i<mta.length; i++) {
+    if (mta[i].name === input) {
+      return i;
+    }
   }
+  return 'not a line on MTA';
 };
 
-//var planTrip('N', 'Times Square', '6', '33rd');
+//input lineCode from getLine and station names and return line number and stop number
+//eg getStop(1, '6th') will return 2
+//works
+var getStop = function (lineCode, stopName) {
+  for (var i = 0; i<mta[lineCode].stops.length; i++) {
+    if (stopName === mta[lineCode].stops[i]) {
+      return i;
+    }
+  }
+  return 'not a stop on line ' + lineCode;
+}
+
+//check if start and stop are the same
+
+
+//get a line name and stop name for commencement and start line and stop line
+//for destination, change them to the array codes and add them to var trip.
+
+var tripPlan = function(firstLine, firstStation, endLine, endStation) {
+  trip.startLine = getLine(firstLine);
+  trip.startStation = getStop(trip.startLine, firstStation);
+  trip.stopLine = getLine(endLine);
+  trip.stopStation = getStop(trip.stopLine, endStation);
+}
