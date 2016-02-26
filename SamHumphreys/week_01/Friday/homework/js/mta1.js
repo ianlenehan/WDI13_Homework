@@ -3,7 +3,7 @@
 // The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
 // The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
 
-
+// setup arrays for network and trip details
 var mta = [{
     name: 'n',
     stops: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']},
@@ -50,7 +50,7 @@ var getStop = function (lineCode, stopName) {
 
 //get a line name and stop name for commencement and start line and stop line
 //for destination, change them to the array codes and add them to var trip.
-
+//works
 var tripPlan = function(firstLine, firstStation, endLine, endStation) {
   trip.startLine = getLine(firstLine);
   trip.startStation = getStop(trip.startLine, firstStation);
