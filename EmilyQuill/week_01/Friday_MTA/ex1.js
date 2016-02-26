@@ -27,49 +27,78 @@ var lines = {
 };
 
 var planTrip = function(startLine, startStation, endLine, endStation) {
-    // console.log("Index of origin = " + lines.findStop(startLine, startStation));
-    // console.log("Index of Union Square = " + lines.findStop(startLine, "Union Square"));
-    // console.log("Index of Union Square on " + endLine + " = " + lines.findStop(endLine, "Union Square"));
-    // console.log("Index of destination = " + lines.findStop(endLine, endStation));
-    firstLeg = [];
-    secondLeg = [];
 
+  if (endLine === undefined || endLine === startLine) {
+    var journey = [];
+    var journeyDetails;
 
-    if (lines.findStop(startLine, startStation) > lines.findStop(startLine, "Union Square")) {
-        // Travelling backwards -- need a backwards loop!
-          for (var i = lines.findStop(startLine, startStation) -1; i >= lines.findStop(startLine, "Union Square"); i--) {
-          firstLeg.push(lines[startLine][i]);
-        }
+    if (lines.findStop(startLine, startStation) === lines.findStop(startLine, endStation)) {
+      journeyDetails = null; // you have nowhere to go -- you're already there.
     } else {
-        // for all the stops BETWEEN start station and Union Square (including US), add the station name to an Array
-        for (var i = lines.findStop(startLine, startStation) + 1; i <= lines.findStop(startLine, "Union Square"); i++) {
-          firstLeg.push(lines[startLine][i]);
+      if (lines.findStop(startLine, startStation) > lines.findStop(startLine, endStation)) {
+        // start index > end index: backwards loop
+        for (var i = lines.findStop(startLine, startStation) - 1; i >= lines.findStop(startLine, endStation); i--) {
+          journey.push(lines[startLine][i]);
         }
+        journeyDetails = "You must travel through the following stops on the " + startLine + " line: " + journey.join(", ") + ".";
+        var stops = Math.abs((lines.findStop(startLine, startStation)) - (lines.findStop(startLine, endStation)));
+      } else {
+        // start index < end index: forwards loop
+        for (var i = lines.findStop(startLine, startStation) + 1; i <= lines.findStop(startLine, endStation); i++) {
+          journey.push(lines[startLine][i]);
+        }
+        journeyDetails = "You must travel through the following stops on the " + startLine + " line: " + journey.join(", ") + ".";
+        var stops = Math.abs((lines.findStop(startLine, startStation)) - (lines.findStop(startLine, endStation)));
+      }
+    }
+    if (journeyDetails === null) {
+      console.log("It looks like you're already there..");
+    } else {
+      console.log(journeyDetails);
+      console.log("Total stops: " + stops);
     }
 
-      console.log("You must travel through the following stops on the " + startLine + " line: " + firstLeg.join(", ") + ".");
-      console.log("Change at Union Square.");
+  } else {
+    firstLeg = []; // will capture all stations travelled through on first leg
+    secondLeg = []; // will capture all stations travelled through on second leg
 
-      if (lines.findStop(endLine, "Union Square") > lines.findStop(endLine, endStation)) {
-          // Travelling backwards -- need a backwards loop!
-          for (var i = lines.findStop(endLine, "Union Square")-1; i >= lines.findStop(endLine, endStation); i--) {
-            secondLeg.push(lines[endLine][i]);
-          }
-      } else {
-          // for all the stops BETWEEN Union Square (new line) and destination, add the station name to an Array
-          for (var i = lines.findStop(endLine, "Union Square") + 1; i <= lines.findStop(endLine, endStation); i++) {
-            secondLeg.push(lines[endLine][i]);
-          }
+    if (lines.findStop(startLine, startStation) > lines.findStop(startLine, "Union Square")) {
+      // start index > end index: backwards loop
+      for (var i = lines.findStop(startLine, startStation) - 1; i >= lines.findStop(startLine, "Union Square"); i--) {
+        firstLeg.push(lines[startLine][i]);
       }
-
-
-        console.log("Your journey continues through the following stops on the " + endLine + " line: " + secondLeg.join(", ") + ".");
-
-        var firstLegStops = Math.abs((lines.findStop(startLine, startStation)) - (lines.findStop(startLine, "Union Square")));
-        var secondLegStops = Math.abs((lines.findStop(endLine, "Union Square")) - (lines.findStop(endLine, endStation)));
-
-        console.log("Total stops: " + (firstLegStops + secondLegStops));
+    } else {
+      // for all the stops BETWEEN start station and Union Square (including US), add the station name to an Array
+      for (var i = lines.findStop(startLine, startStation) + 1; i <= lines.findStop(startLine, "Union Square"); i++) {
+        firstLeg.push(lines[startLine][i]);
       }
+    }
+
+    console.log("You must travel through the following stops on the " + startLine + " line: " + firstLeg.join(", ") + ".");
+    console.log("Change at Union Square.");
+
+    if (lines.findStop(endLine, "Union Square") > lines.findStop(endLine, endStation)) {
+      // Travelling backwards -- need a backwards loop!
+      for (var i = lines.findStop(endLine, "Union Square") - 1; i >= lines.findStop(endLine, endStation); i--) {
+        secondLeg.push(lines[endLine][i]);
+      }
+    } else {
+      // for all the stops BETWEEN Union Square (new line) and destination, add the station name to an Array
+      for (var i = lines.findStop(endLine, "Union Square") + 1; i <= lines.findStop(endLine, endStation); i++) {
+        secondLeg.push(lines[endLine][i]);
+      }
+    }
+
+
+    console.log("Your journey continues through the following stops on the " + endLine + " line: " + secondLeg.join(", ") + ".");
+
+    var firstLegStops = Math.abs((lines.findStop(startLine, startStation)) - (lines.findStop(startLine, "Union Square")));
+    var secondLegStops = Math.abs((lines.findStop(endLine, "Union Square")) - (lines.findStop(endLine, endStation)));
+
+    console.log("Total stops: " + (firstLegStops + secondLegStops));
+  }
+
+}
 
 
 
@@ -77,23 +106,23 @@ var planTrip = function(startLine, startStation, endLine, endStation) {
 
 
 
-      //   findLine: function (station) {
-      //     var results = [];
-      //     for (var i = 0; i < lines['N'].length; i++ ) {
-      //       if (lines['N'][i] === station) {
-      //         results.push("Line N, stop " +i);
-      //       }
-      //     }
-      //     for (var j = 0; i < lines['L'].length; i++ ) {
-      //       if (lines['L'][i] === station) {
-      //         results.push("Line L, stop " +i);
-      //       }
-      //     }
-      //     for (var k = 0; i < lines['6'].length; i++ ) {
-      //       if (lines['6'][i] === station) {
-      //         results.push("Line 6, stop " +i);
-      //       }
-      //     }
-      //     return results;
-      //   }
-      // };
+//   findLine: function (station) {
+//     var results = [];
+//     for (var i = 0; i < lines['N'].length; i++ ) {
+//       if (lines['N'][i] === station) {
+//         results.push("Line N, stop " +i);
+//       }
+//     }
+//     for (var j = 0; i < lines['L'].length; i++ ) {
+//       if (lines['L'][i] === station) {
+//         results.push("Line L, stop " +i);
+//       }
+//     }
+//     for (var k = 0; i < lines['6'].length; i++ ) {
+//       if (lines['6'][i] === station) {
+//         results.push("Line 6, stop " +i);
+//       }
+//     }
+//     return results;
+//   }
+// };
