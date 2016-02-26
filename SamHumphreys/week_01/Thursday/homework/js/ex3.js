@@ -35,7 +35,7 @@ var findClientFromNumber = function(input){
       return searchResult;
     }
   }
-  return openAccount();
+//  return openAccount();
 }
 
 // A function to find the array index based on a client name
@@ -48,7 +48,7 @@ var findClientFromName = function(input){
       return searchResult;
     }
   }
-  return openAccount();
+//  return openAccount();
 }
 
 var getClientCode = function(input) {
@@ -72,7 +72,10 @@ var getBalance = function(input) {
 var checkBalance = function(input) {
   var findCode = getClientCode(input);
   jsBkAc = jsBank[findCode];
-  if (jsBkAc === undefined) {return openAccount()};
+  if (jsBkAc === undefined) {
+    console.log("That is not a valid account.");
+    return;
+  }
   var balance = jsBkAc.balance;
   console.log("The balance in account number " + jsBkAc.accountNumber +
                 " in the name of " + jsBkAc.name + " is " + balance);
@@ -130,10 +133,9 @@ function openAccount() {
     if (findCode !== -1) {
       console.log("That account already exists, account number " +
                     jsBkAc.accountNumber + " in the name " + jsBkAc.name);
-    }
-    if (findCode === -1) {
-      jsBank.push({name: newName, accountNumber: 0, balance: 0});
-      console.log(jsBank);
+    } else if (findCode === -1) {
+    jsBank.push({name: newName, accountNumber: 0, balance: 0});
+    console.log(jsBank);
     }
   } else if (wantToOpen === "n") {
     console.log("Ok, have a nice day...");
