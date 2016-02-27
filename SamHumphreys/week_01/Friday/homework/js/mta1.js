@@ -29,17 +29,23 @@ var trip = {
     trip.stopLine = decipher.getLine(endLine);
     trip.stopStation = decipher.getStop(trip.stopLine, endStation);
   },
-  checkLines: function () {
-                if (startLine === stopLine && startStation === stopStation) {
+  tripMake: function () {
+                if (trip.startLine === trip.stopLine && trip.startStation ===
+                      trip.stopStation) {
                   trip.samePlace();
+                } else if (trip.startLine === trip.stopLine) {
+                  trip.singleLine();
+                } else if {trip.startLine !== trip.stopLine} (
+                  trip.multiLine();
                 }
   },
   samePlace:  function () {
-                console.log('You\'re already at your destination you numpty');
+                console.log('You\'re already at your destination...');
+                console.log('*mutters under breath* you numpty');
   },
   singleLine: function () {
                 if (trip.startStation < trip.stopStation) {
-                  for (var i = trip.startStation + 1; i <= trip.stopStation + 1; i++) {
+                  for (var i = trip.startStation + 1; i <= trip.stopStation; i++) {
                     trip.tripDetails.push([trip.startLine, i]);
                   }
                 } else {
@@ -49,7 +55,7 @@ var trip = {
                 }
   },
   multiLine:  function () {
-
+                console.log('multi line trip');
   }
 }
 
@@ -70,14 +76,4 @@ var decipher = {
               }
               return 'not a stop on line ' + lineCode;
             }
-}
-
-var yourTrip = function () {
-  if (trip.startLine === trip.stopLine && trip.startStation === trip.stopStation) {
-    console.log('You are already at your destination, you numpty!');
-  } else if (trip.startLine === trip.stopLine) {
-
-  } else {
-    return 'multi line trip'
-  }
 }
