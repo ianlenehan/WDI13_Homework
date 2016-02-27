@@ -26,6 +26,7 @@ var trip = {
   savedStop: '',
   tripDetails: [],
   tripExplaination: [],
+  totalStops: 0,
   tripPlan: function(firstLine, firstStation, endLine, endStation) {
     trip.startLine = decipher.getLine(firstLine);
     trip.startStation = decipher.getStop(trip.startLine, firstStation);
@@ -45,81 +46,89 @@ var trip = {
   samePlace:  function () {
                 trip.tripExplaination.push('You\'re already at your ' +
                                             'destination... *mutters under ' +
-                                            'breath* you numpty.');
+                                            'breath*.');
   },
   singleLine: function () {
                 if (trip.startStation < trip.stopStation) {
                   for (var i = trip.startStation + 1; i <= trip.stopStation; i++) {
                     trip.tripDetails.push([trip.startLine, i]);
                   }
+                 trip.totalStops += trip.stopStation - trip.startStation;
                 } else {
                   for (var i = trip.startStation-1; i >= trip.stopStation; i--) {
                     trip.tripDetails.push([trip.startLine, i]);
                   }
+                 trip.totalStops -=  trip.stopStation - trip.startStation;
                 }
                 trip.tripDetails.pop();
                 decipher.convertBack();
-                trip.tripExplaination.push('Get off the train at ' +
+                trip.tripExplaination.push('get off the train at ' +
                               mta[trip.stopLine].stops[trip.stopStation] +
-                              ' station.');
+                              ' station');
   },
   multiLine:  function () {
-                runMultiLine();
+    trip.savedLine = trip.stopLine
+    trip.savedStop = trip.stopStation;
+    trip.stopLine = trip.startLine;
+    trip.stopStation = decipher.getStop(trip.startLine, 'Union Square');
+    trip.tripMake();
+    trip.tripExplaination.push('and change to the ' +
+                                mta[trip.savedLine].name + ' line.');
+    trip.startLine = trip.savedLine;
+    trip.startStation = decipher.getStop(trip.startLine, 'Union Square');
+    trip.stopLine = trip.savedLine;
+    trip.stopStation = trip.savedStop;
+    trip.tripMake();
   }
 }
 
 var decipher = {
-  getLine:  function (input) {
-              for (var i = 0; i<mta.length; i++) {
-                if (mta[i].name === input) {
-                  return i;
-                }
-              }
-              return 'not a line on MTA';
-            },
-  getStop:  function (lineCode, stopName) {
-              for (var i = 0; i<mta[lineCode].stops.length; i++) {
-                if (stopName === mta[lineCode].stops[i]) {
-                  return i;
-                }
-              }
-              return 'not a stop on line ' + lineCode;
-            },
-  convertBack:  function () {
-                  trip.tripExplaination.push('Go through these stations: ');
-                  for (var i = 0; i<trip.tripDetails.length; i++) {
-                    var stopDetails = trip.tripDetails[i];
-                    trip.tripExplaination.push(mta[stopDetails[0]].stops[stopDetails[1]]);
-                  }
-                  trip.tripDetails = [];
-                },
+  getLine:          function (input) {
+                      for (var i = 0; i<mta.length; i++) {
+                        if (mta[i].name === input) {
+                          return i;
+                        }
+                      }
+                      return 'not a line on MTA';
+                    },
+  getStop:          function (lineCode, stopName) {
+                      for (var i = 0; i<mta[lineCode].stops.length; i++) {
+                        if (stopName === mta[lineCode].stops[i]) {
+                          return i;
+                        }
+                      }
+                      return 'not a stop on line ' + lineCode;
+                    },
+  convertBack:      function () {
+                      trip.tripExplaination.push('Go through these stations: ');
+                      for (var i = 0; i<trip.tripDetails.length; i++) {
+                        var stopDetails = trip.tripDetails[i];
+                        trip.tripExplaination.push(mta[stopDetails[0]].stops[stopDetails[1]]);
+                      }
+                    },
   inEnglishPlease:  function () {
                       var plainEnglish = '';
                       for (var i = 0; i<trip.tripExplaination.length; i++) {
-                        plainEnglish += trip.tripExplaination[i] + ' ';
+                        plainEnglish += trip.tripExplaination[i];
+                        plainEnglish += ', ';
                       }
                       console.log(plainEnglish);
                       trip.tripExplaination = [];
-                }
+                },
+  goSomewhere:      function () {
+                      trip.totalStops = 0;
+                      var inputStartLine = prompt('What is your starting line?');
+                      var inputStartStop = prompt('What is your starting station?');
+                      var inputStopLine = prompt('What is your destination line?');
+                      var inputStopStop = prompt('What is your destination station?');
+
+                      trip.tripPlan(inputStartLine, inputStartStop, inputStopLine, inputStopStop);
+                      trip.tripMake();
+                      decipher.inEnglishPlease();
+                      console.log(trip.totalStops + ' stops in total');
+                    },
 }
 
-var runMultiLine = function () {
-  //save the destination details, then run the trip to Union Square as a journey
-  trip.savedLine = trip.stopLine
-  trip.savedStop = trip.stopStation;
-  trip.stopLine = trip.startLine;
-  trip.stopStation = decipher.getStop(trip.startLine, 'Union Square');
-  trip.tripMake();
+//Add validation for input
 
-  // after this it will be convert back, then get off the train at US
-
-  trip.tripExplaination.push('Change to the ' +
-                              mta[trip.savedLine].name + ' line.');
-
-  //now run the 2nd leg as a journey and add to the details.
-  trip.startLine = trip.savedLine;
-  trip.startStation = decipher.getStop(trip.startLine, 'Union Square');
-  trip.stopLine = trip.savedLine;
-  trip.stopStation = trip.savedStop;
-  trip.tripMake();
-}
+//add formatting to split the trip onto several lines
