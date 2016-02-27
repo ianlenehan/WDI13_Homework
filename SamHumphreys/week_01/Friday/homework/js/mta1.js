@@ -45,7 +45,7 @@ var trip = {
   samePlace:  function () {
                 trip.tripExplaination.push('You\'re already at your ' +
                                             'destination... *mutters under ' +
-                                            'breath* you numpty');
+                                            'breath* you numpty.');
   },
   singleLine: function () {
                 if (trip.startStation < trip.stopStation) {
@@ -61,7 +61,7 @@ var trip = {
                 decipher.convertBack();
                 trip.tripExplaination.push('Get off the train at ' +
                               mta[trip.stopLine].stops[trip.stopStation] +
-                              ' station');
+                              ' station.');
   },
   multiLine:  function () {
                 runMultiLine();
@@ -92,6 +92,14 @@ var decipher = {
                     trip.tripExplaination.push(mta[stopDetails[0]].stops[stopDetails[1]]);
                   }
                   trip.tripDetails = [];
+                },
+  inEnglishPlease:  function () {
+                      var plainEnglish = '';
+                      for (var i = 0; i<trip.tripExplaination.length; i++) {
+                        plainEnglish += trip.tripExplaination[i] + ' ';
+                      }
+                      console.log(plainEnglish);
+                      trip.tripExplaination = [];
                 }
 }
 
@@ -106,7 +114,7 @@ var runMultiLine = function () {
   // after this it will be convert back, then get off the train at US
 
   trip.tripExplaination.push('Change to the ' +
-                              mta[trip.savedLine].name + ' line');
+                              mta[trip.savedLine].name + ' line.');
 
   //now run the 2nd leg as a journey and add to the details.
   trip.startLine = trip.savedLine;
@@ -114,6 +122,4 @@ var runMultiLine = function () {
   trip.stopLine = trip.savedLine;
   trip.stopStation = trip.savedStop;
   trip.tripMake();
-  // trip.tripExplaination.push('Get off the train at ' +
-  //                           mta[trip.stopLine].stops[trip.stopStation]);
 }
