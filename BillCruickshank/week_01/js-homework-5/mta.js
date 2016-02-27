@@ -7,12 +7,12 @@
 
 mta = {
 
-  lines : { }, //Was [ ]
+  lines : { }, //Was [ ], mistake.
 
   makeLine : function(name) {
     var args = (arguments.length === 1?[arguments[0]]:Array.apply(null, arguments));
-    this.lines[name] = {
 
+    this.lines[name] = {
       name : name,
       stations : args.slice(1),
 
@@ -45,7 +45,7 @@ mta = {
       }
     }
   },
- /*
+/*
   findLine : function(name) { //legacy of lines =[]
     console.log("XXXXXXXXXXXXXXXXXX");
     return this.lines[name];
@@ -82,7 +82,7 @@ mta = {
     if (line1 === line2){
       debugger
       console.log("You don't have to change trains");
-      var line = this.lines[name1];
+      var line = this.lines[line1];
       var length = line.tripPlanner(name1, name2);
       if (!length) {
         console.log("Well, good luck anyway.");
@@ -114,6 +114,7 @@ mta = {
 mta.makeLine("N", "Times Square", "34th", "28th", "23rd", "Union Square", "8th");
 mta.makeLine("L", "8th", "6th", "Union Square", "3rd", "1st");
 mta.makeLine("6", "Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place");
+
 l = mta.lines["N"];
 l.tripPlanner("Times Square", "23rd");
 console.log("--");
