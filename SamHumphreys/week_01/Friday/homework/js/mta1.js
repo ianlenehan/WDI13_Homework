@@ -86,8 +86,13 @@ var decipher = {
               return 'not a stop on line ' + lineCode;
             },
   convertBack:  function () {
-                  console.log('turn the trip.tripDetails data into words');
-  }
+                  trip.tripExplaination.push('Go through these stations: ');
+                  for (var i = 0; i<trip.tripDetails.length; i++) {
+                    var stopDetails = trip.tripDetails[i];
+                    trip.tripExplaination.push(mta[stopDetails[0]].stops[stopDetails[1]]);
+                  }
+                  trip.tripDetails = [];
+                }
 }
 
 var runMultiLine = function () {
@@ -111,12 +116,4 @@ var runMultiLine = function () {
   trip.tripMake();
   // trip.tripExplaination.push('Get off the train at ' +
   //                           mta[trip.stopLine].stops[trip.stopStation]);
-}
-
-
-
-var showIt = function() {
-  console.log(trip);
-  console.log(trip.tripDetails);
-  console.log(trip.tripExplaination);
 }
