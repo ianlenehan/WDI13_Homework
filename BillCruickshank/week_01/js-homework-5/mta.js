@@ -7,11 +7,12 @@
 
 mta = {
 
-  lines : {}, //Was []
+  lines : { }, //Was [ ]
 
   makeLine : function(name) {
     var args = (arguments.length === 1?[arguments[0]]:Array.apply(null, arguments));
     this.lines[name] = {
+
       name : name,
       stations : args.slice(1),
 
@@ -50,14 +51,38 @@ mta = {
     return this.lines[name];
   },
 */
+  validStationLine : function(station, line) {
+// noisily returns false for failure, or returns true.
+    l = this.lines[line];
+    if (l) {;
+      if (l.stations.indexOf(station) !== -1) {
+        return true;
+      }
+      else{
+        console.log("I recognise line", line, "but I can't find", station, "on that line.")
+        console.log("I can't help you, sorry.")
+        return false;
+      }
+    } else {
+      console.log("Sorry, but, I don't know what you mean by", line+".");
+      console.log("I expected the name of a line. I can't help you.");
+      return false;
+    }
+  },
+
   tripPlanner : function (name1, line1, name2, line2) {
     var printChangeLine = function (line1, line2) {
       console.log("Go from line", line1, "to line", line2+".");
     }
 
+    if (!(this.validStationLine(name1, line1) && this.validStationLine(name2, line2))) {
+      return false;
+    }
+
     if (line1 === line2){
+      debugger
       console.log("You don't have to change trains");
-      var line = findLine(name1);
+      var line = this.lines[name1];
       var length = line.tripPlanner(name1, name2);
       if (!length) {
         console.log("Well, good luck anyway.");
@@ -78,6 +103,7 @@ mta = {
       var line2 = this.lines[line2];
       length1 = line1.tripPlanner( name1, "Union Square");
       console.log("You will need to change trains here,");
+      printChangeLine(line1.name, line2.name);
       length2 = line2.tripPlanner( "Union Square", name2);
       console.log("That'll be", length1 + length2, "stops total.");
       console.log("Have fun!");
@@ -87,12 +113,28 @@ mta = {
 
 mta.makeLine("N", "Times Square", "34th", "28th", "23rd", "Union Square", "8th");
 mta.makeLine("L", "8th", "6th", "Union Square", "3rd", "1st");
+mta.makeLine("6", "Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place");
 l = mta.lines["N"];
 l.tripPlanner("Times Square", "23rd");
+console.log("--");
 l.tripPlanner("23rd", "Times Square");
-console.log("\n\n\n\n")
-mta.tripPlanner("Times Square", "N", "8th", "L");
-console.log("\n\n\n\n")
-mta.tripPlanner("Times Square", "N", "Union Square", "L");
-console.log("\n\n\n\n")
-mta.tripPlanner("Union Square", "N", "Union Square", "L");
+console.log("--");
+l.tripPlanner("Times Square", "8th");
+console.log("--");
+l.tripPlanner("8th", "Times Square");
+
+var test = function (n1, l1, n2, l2) {
+  console.log("--");
+  console.log(n1,l1,n2,l2);
+  console.log("-")
+  mta.tripPlanner(n1,l1,n2,l2);
+  console.log("--");
+}
+
+test("Times Square", "N", "8th", "L");
+test("Times Square", "N", "Times Square", "N");
+test("Times Square", "N", "Union Square", "L");
+test("Union Square", "L", "Times Square", "N");
+test("Union Square", "N", "Union Square", "L");
+test("Onion Square", "N", "Union Square", "L");
+test("Onion Square", "Cool and the Gang", "Union Square", "L");
