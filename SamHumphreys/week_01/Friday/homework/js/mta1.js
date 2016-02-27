@@ -14,46 +14,70 @@ var mta = [{
           'Astor Place']}
 ]
 
+//tripPlan takes the start and stop lines and stations and populates the
+//trip
+
 var trip = {
   startLine: '',
   startStation: '',
   stopLine: '',
-  stopStation: ''
+  stopStation: '',
+  tripDetails: [],
+  tripPlan: function(firstLine, firstStation, endLine, endStation) {
+    trip.startLine = decipher.getLine(firstLine);
+    trip.startStation = decipher.getStop(trip.startLine, firstStation);
+    trip.stopLine = decipher.getLine(endLine);
+    trip.stopStation = decipher.getStop(trip.stopLine, endStation);
+  },
+  checkLines: function () {
+                if (startLine === stopLine && startStation === stopStation) {
+                  trip.samePlace();
+                }
+  },
+  samePlace:  function () {
+                console.log('You\'re already at your destination you numpty');
+  },
+  singleLine: function () {
+                if (trip.startStation < trip.stopStation) {
+                  for (var i = trip.startStation + 1; i <= trip.stopStation + 1; i++) {
+                    trip.tripDetails.push([trip.startLine, i]);
+                  }
+                } else {
+                  for (var i = trip.startStation-1; i >= trip.stopStation; i--) {
+                    trip.tripDetails.push([trip.startLine, i]);
+                  }
+                }
+  },
+  multiLine:  function () {
+
+  }
 }
 
-//input a line letter, output the array number in mta
-//eg getLine('n'); returns 0
-//works
-var getLine = function (input) {
-  for (var i = 0; i<mta.length; i++) {
-    if (mta[i].name === input) {
-      return i;
-    }
-  }
-  return 'not a line on MTA';
-};
-
-//input lineCode from getLine and station names and return line number and stop number
-//eg getStop(1, '6th') will return 2
-//works
-var getStop = function (lineCode, stopName) {
-  for (var i = 0; i<mta[lineCode].stops.length; i++) {
-    if (stopName === mta[lineCode].stops[i]) {
-      return i;
-    }
-  }
-  return 'not a stop on line ' + lineCode;
+var decipher = {
+  getLine:  function (input) {
+              for (var i = 0; i<mta.length; i++) {
+                if (mta[i].name === input) {
+                  return i;
+                }
+              }
+              return 'not a line on MTA';
+            },
+  getStop:  function (lineCode, stopName) {
+              for (var i = 0; i<mta[lineCode].stops.length; i++) {
+                if (stopName === mta[lineCode].stops[i]) {
+                  return i;
+                }
+              }
+              return 'not a stop on line ' + lineCode;
+            }
 }
 
-//check if start and stop are the same
+var yourTrip = function () {
+  if (trip.startLine === trip.stopLine && trip.startStation === trip.stopStation) {
+    console.log('You are already at your destination, you numpty!');
+  } else if (trip.startLine === trip.stopLine) {
 
-
-//get a line name and stop name for commencement and start line and stop line
-//for destination, change them to the array codes and add them to var trip.
-//works
-var tripPlan = function(firstLine, firstStation, endLine, endStation) {
-  trip.startLine = getLine(firstLine);
-  trip.startStation = getStop(trip.startLine, firstStation);
-  trip.stopLine = getLine(endLine);
-  trip.stopStation = getStop(trip.stopLine, endStation);
+  } else {
+    return 'multi line trip'
+  }
 }
