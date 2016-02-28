@@ -68,11 +68,9 @@ var bank = {
   },
   withdrawal: function (n, amount) {
     for (var i = 0; i < bank.accounts.length; i++) {
-      var balance;
       if (bank.accounts[i].name === n) {
-        balance = bank.accounts[i].balance - amount;
-          if (balance >= 0) {
-            bank.accounts[i].balance = balance;
+        if (bank.accounts[i].balance >= amount) {
+          bank.accounts[i].balance -= amount;
           };
       };
     };
