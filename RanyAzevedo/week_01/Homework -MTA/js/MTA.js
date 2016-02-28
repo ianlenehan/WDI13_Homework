@@ -47,7 +47,7 @@ var goBackwards = function (firstLine, initialStop, finalStop) {
   for (var i = initialIndex; i >= finalIndex ; i--) {
       backStops.push(goBackwards[i]);
   }
-  var message = "You must travel trough the following stops on the " ;
+  var message = "You must travel trough the following stops on the  " ;
   console.log(message + firstLine + ": " + backStops);
   return backStops;
 };
