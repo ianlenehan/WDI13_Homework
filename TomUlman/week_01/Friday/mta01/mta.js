@@ -8,7 +8,7 @@
 //                                | (_) |
 //                              o_|     |_o
 //                             /    _^_    \
-//                          _  |   (_O_)   | _
+//                          _  |   (_O_)   |  _
 //                          \_[]\_________/[]_/
 //                          []---------------[]
 //                           \\|||||||||||||//
@@ -31,7 +31,7 @@
    "6" : ["Grand Central", "33rd", "28th", "23rd", "Union Station", "Astor Place"]
   };
 
-  var subwaySystem = function(startingLine, startingStation, endLine, endStation) {
+  var trainSystem = function(startingLine, startingStation, endLine, endStation) {
       // ASSIGNS LINE TO INPUT
     var line1 = trainLines[startingLine];
     var line2 = trainLines[endLine];
@@ -103,6 +103,6 @@
 
     }
 
-    console.log("The trip will take you " + allStops + " stops in total");
+    console.log("The trip will take you " + allStops + " stops in total from your starting station");
 
 };
