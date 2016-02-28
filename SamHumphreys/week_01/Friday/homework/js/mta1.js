@@ -116,11 +116,9 @@ var decipher = {
         for (var i = 0; i < mta[lineCode].stops.length; i++) {
             if (stopName === mta[lineCode].stops[i]) {
                 return i;
-            } else {
-            return;
             }
         }
-      }
+     }
     },
     convertBack: function() {
         if (trip.tripDetails.length === 0) {
