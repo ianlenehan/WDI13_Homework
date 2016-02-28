@@ -40,8 +40,6 @@ if (matches < 1) {
 }
 }
 
-
-
 // lineExists("Q Line");
 
 //first test is to create an array of the stations traveled for each leg
@@ -54,7 +52,7 @@ var planTripBeta = function(fromStop, line, toStop) {
   var journey = [];
   var message = '';
   if(fromIndex > toIndex) {
-    // if the first station is further on the track than the next stations
+    // if the first station is further on the track than the next station
     // reverse the array
     for (var i = toIndex + 1; i < fromIndex; i++) {
       journey.push(lines[line][i]);
@@ -94,7 +92,6 @@ var planTrip = function(fromStop, fromLine, toStop, toLine) {
   var toStopExists = stationExists(toStop, toLine);
 
 // first check if both stops exist
-
 if (fromStopExists === false) {
     console.log(fromStop + " does not exist on the " + fromLine + "!");
     return false;
@@ -104,6 +101,7 @@ if (fromStopExists === false) {
   } else {
 
     var fromIndex = lines[fromLine].indexOf(fromStop);
+    // the above finds the index of the 'from stop' within the 'from line' of the lines object
     var toIndex = lines[toLine].indexOf(toStop);
     var distance1 = '';
     var distance2 = '';
@@ -126,7 +124,7 @@ if (fromStopExists === false) {
       distance1 = tripDistance(fromStop, fromLine, toStop);
       if (fromStop !== toStop) {
       message = ("Starting at " + fromStop + " station on the " + fromLine + ", travel " +
-      distance1 + " stops to " + toStop) + " station.";
+      distance1 + " stops, through " + journey1 + " to " + toStop + " station.")
     } else {
       message = ("Pay attention!");
     }
@@ -153,3 +151,4 @@ planTrip("Grand Central", "6 line", "NY Times", "N line"); //with another statio
 planTrip("Grand Central", "Q line", "Times Square", "N line"); //with a line that doesn't exist
 
 planTrip("Grand Central", "6 line", "Grand Central", "6 line"); //Same to and from station.
+planTrip("34th", "N line", "8th", "N line"); //Same to and from line.
