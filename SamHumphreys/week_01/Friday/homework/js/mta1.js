@@ -37,6 +37,12 @@ var trip = {
         trip.stopStation = decipher.getStop(trip.stopLine, endStation);
     },
     tripMake: function() {
+        if (typeof trip.startStation !== 'number' ||
+            typeof trip.stopStation !== 'number') {
+            console.log('Those aren\'t valid stations or stops.');
+            console.log('Please try again');
+            return;
+        }
         if (trip.startLine === trip.stopLine && trip.startStation ===
             trip.stopStation) {
             trip.samePlace();
