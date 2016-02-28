@@ -15,9 +15,9 @@ var triangle = {
 */
 
 var triangle = {
-  A: 5,
-  B: 5,
-  C: 5
+  A: 3,               // A,B & C are the sides of the triangle;
+  B: 4,
+  C: 6
 };
 
 var testTriangle = function(x) {
@@ -45,7 +45,7 @@ var isIsosceles = function (x) {
 }
 
 var area = function (x) {
-  var s = (x.A + x.B + x.C) / 2;
+  var s = (x.A + x.B + x.C) / 2;        //Herrons formula
   return Math.sqrt(s * (s - x.A) * (s - x.B) * (s - x.C));
 }
 
