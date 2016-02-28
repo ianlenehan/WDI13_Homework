@@ -88,6 +88,7 @@ var planTrip = function(firstLine, initialStop, secondLine, finalStop) {
 
 
 // 2nd -  go from 'Union Square' to finalStop;
+// problem on secondLine - not showing stations
 
   if (finalIndex < unionIdenx1) {
     goForwards(secondLine, "Union Square", finalStop);
