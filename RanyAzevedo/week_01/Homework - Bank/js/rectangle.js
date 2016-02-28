@@ -60,6 +60,7 @@ var triangle = {
   baseC: 2
 };
 
+var longSide
 
 var isEquilateral = function(){
   if (triangle.sideA === triangle.sideB && triangle.sideB === triangle.baseC && triangle.sideA === triangle.sideB){
