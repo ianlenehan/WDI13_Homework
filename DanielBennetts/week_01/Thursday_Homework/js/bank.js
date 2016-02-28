@@ -1,4 +1,4 @@
-/*n this homework, you'll create a basic bank in Javascript. The bank has many
+/* n this homework, you'll create a basic bank in Javascript. The bank has many
 accounts and the following capabilities that you need to write.
 
 Bank
@@ -27,57 +27,53 @@ show the total balance, make some deposits and withdrawals, show the new
 total balance.*/
 
 var bank = {
-    accounts: [{
-        accountName: "Daniel Bennetts",
-        currentBalance: 10000
-    }, {
-        accountName: "Jessica Zhang",
-        currentBalance: 500
-    }, {
-        accountName: "Austin Powers",
-        currentBalance: 200
-    }],
+  accounts: [{
+    accountName: 'Daniel Bennetts',
+    currentBalance: 10000
+  }, {
+    accountName: 'Jessica Zhang',
+    currentBalance: 500
+  }, {
+    accountName: 'Austin Powers',
+    currentBalance: 200
+  }],
 
-    sumOfMoney: function(sum) {
-        var sumTotal = 0;
-        for (var i = 0; i < this.accounts.length; i++) {
-            sumTotal += this.accounts[i].currentBalance;
-            console.log(sumTotal)
-        }
-        return sumTotal
-    },
-    addAccount: function(name, balance) {
-        var newAccount = {
-            accountName: name,
-            currentBalance: balance
-        }
-        this.accounts.push(newAccount)
-        console.log()
-    },
-    deposit: function(name, amount) {
-        for (var i = 0; i < this.accounts.length; i++) {
-            if (name === this.accounts[i].accountName) {
-                // What's the right account (which account has the right name
-                this.accounts[i].currentBalance += amount;
-                console.log('You have deposited ' + '$' + amount)
-                return this.accounts[i].currentBalance;
-            }
-        }
-    },
-    withdraw: function(name, amount) {
-        for (var i = 0; i < this.accounts.length; i++) {
-            if (name === this.accounts[i].accountName) {
-                this.accounts[i].currentBalance -= amount;
-                console.log('You have withdrawn ' + '$' + amount)
-                return this.accounts[i].currentBalance;
-            }
-        }
+  sumOfMoney: function(sum) {
+    var sumTotal = 0;
+    for (var i = 0; i < this.accounts.length; i++) {
+      sumTotal += this.accounts[i].currentBalance;
+      console.log(sumTotal);
     }
-}
-bank.addAccount('Chelsea King', 80)
-bank.deposit(70)
-
-console.log(bank.accounts)
+    return sumTotal;
+  },
+  addAccount: function(name, balance) {
+    var newAccount = {
+      accountName: name,
+      currentBalance: balance
+  };
+    this.accounts.push(newAccount);
+    console.log();
+  },
+  deposit: function(name, amount) {
+    for (var i = 0; i < this.accounts.length; i++) {
+      if (name === this.accounts[i].accountName) {
+        // What's the right account (which account has the right name
+        this.accounts[i].currentBalance += amount;
+        console.log('You have deposited ' + '$' + amount);
+        return this.accounts[i].currentBalance;
+      }
+    }
+  },
+  withdraw: function(name, amount) {
+    for (var i = 0; i < this.accounts.length; i++) {
+      if (name === this.accounts[i].accountName) {
+        this.accounts[i].currentBalance -= amount;
+        console.log('You have withdrawn ' + '$' + amount);
+        return this.accounts[i].currentBalance;
+      }
+    }
+  }
+};
 
 // var bankAccount = {
 //   currentBalance: balance,
