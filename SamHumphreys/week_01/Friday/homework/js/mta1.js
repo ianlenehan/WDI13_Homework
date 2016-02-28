@@ -37,20 +37,21 @@ var trip = {
         trip.stopStation = decipher.getStop(trip.stopLine, endStation);
     },
     tripMake: function() {
-        if (typeof trip.startStation !== 'number' ||
+        if (typeof trip.startLine !== 'number' ||
+            typeof trip.startStation !== 'number' ||
+            typeof trip.stopLine !== 'number' ||
             typeof trip.stopStation !== 'number') {
-            console.log('Those aren\'t valid stations or stops.');
-            console.log('Please try again');
-            return;
-        }
-        if (trip.startLine === trip.stopLine && trip.startStation ===
-            trip.stopStation) {
-            trip.samePlace();
-        } else if (trip.startLine === trip.stopLine) {
-            trip.singleLine();
-        } else if (trip.startLine !== trip.stopLine) {
-            trip.multiLine();
-        }
+              trip.invalidJourney();
+        } else {
+          if (trip.startLine === trip.stopLine && trip.startStation ===
+              trip.stopStation) {
+              trip.samePlace();
+          } else if (trip.startLine === trip.stopLine) {
+              trip.singleLine();
+          } else if (trip.startLine !== trip.stopLine) {
+              trip.multiLine();
+          }
+      }
     },
     samePlace: function() {
         trip.tripExplaination.push('You\'re already at your ' +
@@ -92,6 +93,11 @@ var trip = {
         trip.stopLine = trip.savedLine;
         trip.stopStation = trip.savedStop;
         trip.tripMake();
+    },
+    invalidJourney: function () {
+      console.log('Nope!');
+      console.log('That isn\'t a valid trip. Please try again.');
+
     }
 }
 
@@ -102,15 +108,19 @@ var decipher = {
                 return i;
             }
         }
-        return 'not a line on MTA';
     },
     getStop: function(lineCode, stopName) {
+        if (typeof lineCode === 'string' || typeof lineCode === 'undefined') {
+          return;
+        } else {
         for (var i = 0; i < mta[lineCode].stops.length; i++) {
             if (stopName === mta[lineCode].stops[i]) {
                 return i;
+            } else {
+            return;
             }
         }
-        return 'not a stop on line ' + lineCode;
+      }
     },
     convertBack: function() {
         if (trip.tripDetails.length === 0) {
