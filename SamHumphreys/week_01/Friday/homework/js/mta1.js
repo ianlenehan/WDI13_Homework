@@ -47,6 +47,7 @@ var trip = {
                 trip.tripExplaination.push('You\'re already at your ' +
                                             'destination... *mutters under ' +
                                             'breath*.');
+                decipher.inEnglishPlease();
   },
   singleLine: function () {
                 if (trip.startStation < trip.stopStation) {
@@ -62,9 +63,12 @@ var trip = {
                 }
                 trip.tripDetails.pop();
                 decipher.convertBack();
-                trip.tripExplaination.push('get off the train at ' +
+                decipher.inEnglishPlease();
+                trip.tripExplaination.push('Get off the train at ' +
                               mta[trip.stopLine].stops[trip.stopStation] +
-                              ' station');
+                              ' station.');
+                decipher.inEnglishPlease();
+                trip.tripDetails = [];
   },
   multiLine:  function () {
     trip.savedLine = trip.stopLine
@@ -72,7 +76,7 @@ var trip = {
     trip.stopLine = trip.startLine;
     trip.stopStation = decipher.getStop(trip.startLine, 'Union Square');
     trip.tripMake();
-    trip.tripExplaination.push('and change to the ' +
+    trip.tripExplaination.push('Change to the ' +
                                 mta[trip.savedLine].name + ' line.');
     trip.startLine = trip.savedLine;
     trip.startStation = decipher.getStop(trip.startLine, 'Union Square');
@@ -100,7 +104,11 @@ var decipher = {
                       return 'not a stop on line ' + lineCode;
                     },
   convertBack:      function () {
-                      trip.tripExplaination.push('Go through these stations: ');
+                      if (trip.tripDetails.length === 0) {
+                        trip.tripExplaination.push('Go one stop on the ' + mta[trip.startLine].name + ' line.');
+                      } else {
+                        trip.tripExplaination.push('Go through these stations on the ' + mta[trip.startLine].name + ' line:');
+                      }
                       for (var i = 0; i<trip.tripDetails.length; i++) {
                         var stopDetails = trip.tripDetails[i];
                         trip.tripExplaination.push(mta[stopDetails[0]].stops[stopDetails[1]]);
@@ -109,8 +117,7 @@ var decipher = {
   inEnglishPlease:  function () {
                       var plainEnglish = '';
                       for (var i = 0; i<trip.tripExplaination.length; i++) {
-                        plainEnglish += trip.tripExplaination[i];
-                        plainEnglish += ', ';
+                        plainEnglish += trip.tripExplaination[i] + ' ';
                       }
                       console.log(plainEnglish);
                       trip.tripExplaination = [];
@@ -124,7 +131,6 @@ var decipher = {
 
                       trip.tripPlan(inputStartLine, inputStartStop, inputStopLine, inputStopStop);
                       trip.tripMake();
-                      decipher.inEnglishPlease();
                       console.log(trip.totalStops + ' stops in total');
                     },
 }
