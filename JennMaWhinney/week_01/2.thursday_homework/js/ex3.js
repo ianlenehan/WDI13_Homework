@@ -12,6 +12,45 @@ There is no need to create additional functions of the bank to delete accounts, 
 
 The bank has many accounts. Accounts should be objects that all share a set of common functionality.
 
+*/
+
+
+// var menu = {
+//     width:  300,
+//     height: 200,
+//     title: "Menu"
+// };
+// for(var key in menu) {
+//     var val = menu[key];
+//     console.log("Key: "+key+" value:"+val);
+// }
+
+var bank = [
+    {name: 'Jenn', amount: 50},
+    // {name: 'Vince', amount: 50}
+  ];
+
+// var newAccount= {name:, amount:}
+
+var addAccount = function(money){
+    var total = 0;
+    for(i = 0; i < banki.amount.length; i++)
+    total += bank.amount[i];
+  }
+
+var returnTotal = function(money){
+  for (var value in bank.amount) {
+    var money = bank[value];
+    console.log("There is a total of $" + bank.amount + " in the bank.");
+}
+  return money;
+
+
+}
+returnTotal(bank.amount);
+
+
+/*
 Accounts
 
 Accounts have a current balance and owner's name. You should be able to deposit or withdraw from an account to change the balance.
@@ -36,29 +75,29 @@ Begin exploring the JavaScript Koans. Fork, clone and start trying them.
 
 */
 
-var Bank = {[
-  var account1 =
-  {name:" ",
-  accountNumber:
-  amountOfMoney:
-    },
-  var account2 =
-  {name:" ",
-  accountNumber:
-  amountOfMoney:}
-  var account3 =
-  {name:" ",
-  accountNumber:
-  amountOfMoney:}
-]
-}
-
-
-
-var returnTotal = function(money){
-  return
-}
-
-var addAccount = function(extra){
-
-}
+// var Bank = {[
+//   var account1 =
+//   {name:" ",
+//   accountNumber:
+//   amountOfMoney:
+//     },
+//   var account2 =
+//   {name:" ",
+//   accountNumber:
+//   amountOfMoney:}
+//   var account3 =
+//   {name:" ",
+//   accountNumber:
+//   amountOfMoney:}
+// ]
+// }
+//
+//
+//
+// var returnTotal = function(money){
+//   return
+// }
+//
+// var addAccount = function(extra){
+//
+// }
