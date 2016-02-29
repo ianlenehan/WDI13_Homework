@@ -119,4 +119,4 @@ var logFromUnion = function(lineName) {
         console.log('These are your total stops: ' + totalStops);
     }
 };
-planTrip('nLine', 'Times Square', 'sixLine', 'Grand Central');
+planTrip('nLine', 'Union Square', 'sixLine', 'Union Square');
