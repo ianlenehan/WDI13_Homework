@@ -49,7 +49,7 @@ var bank = [
  name: 'Vick',
  balance: 7000
 }
-];
+]
 
 var sumMoney = function(){
   var totalBalance = 0;
@@ -81,15 +81,11 @@ var withdraw = function (name, ammount){
       bank[i].balance -= ammount;
       console.log(name + ' has now $' + bank[i].balance + ' in the account');
       return bank[i].balance;
-
-     }
+    }
   }
 };
-
 
 function transfer(name1, ammount, name2){
   withdraw(name1,ammount);
   deposit(name2,ammount);
-
-return transfer(name1+ withdraw + name2 + deposit);
-}
+};
