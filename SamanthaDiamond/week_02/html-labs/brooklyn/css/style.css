@@ -1,6 +1,6 @@
-/* 
+/*
 
-## Style Hints: 
+## Style Hints:
 
 Body Font Size = 12px
 	 Line Height = 17px
@@ -10,3 +10,31 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+
+div {
+	width: 1000px;
+	margin: 0 auto;
+	font-size: 12px;
+	line-height: 17px;
+	font-family: "Times New Roman", serif;
+	color: #656565;
+}
+
+h1 {
+	font-size: 3em;
+}
+h4 {
+	color: blue;
+}
+
+.sponsors {
+	display: inline-block;;
+	width: 23%;
+	border: 4px solid silver;
+	padding: 1px;
+}
+
+a {
+	text-decoration: none;
+	color: blue;
+}
