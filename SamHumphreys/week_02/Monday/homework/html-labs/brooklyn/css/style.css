@@ -11,15 +11,42 @@ Link Hover Color = #20222a
 
 */
 
-/*body {
-	font-family: "Times New Roman", serif;
-	color: #656565;
+body {
 	font-size: 12px;
 	line-height: 17px;
-	margin-top: 40px;
+	font-family: "Times New Roman", serif;
+	color: #656565;
 	margin-left: 70px;
+	width: 960px;
 }
 
-.heading {
-	font-size: 27px;
-}*/
+header {
+	color: #bbb;
+	margin-top: 40px;
+	margin-bottom: 21px;
+	font-size: 28px;
+}
+
+footer {
+	border-top: 10px;
+}
+
+img {
+	padding: 1px;
+	width: 960px;
+	margin-bottom: 4px;
+}
+
+.sponsorPics img {
+	display: inline-block;
+	border: 5px solid #bbb;
+	width: 225px;
+}
+
+.date {
+	color: blue;
+}
+
+a {
+	text-decoration: none;
+}
