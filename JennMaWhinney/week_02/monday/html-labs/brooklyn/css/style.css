@@ -12,6 +12,11 @@ header{
 	padding-top: 2em;
 	padding-bottom: 2em;
 }
+
+h1{
+	color: silver;
+	font-size: 3em;
+}
 body{
 	font-size: 12px;
 	line-height: 17px;
@@ -19,7 +24,7 @@ body{
 	color: #656565;
 }
 
-a:hover{
+img a:hover{
 	color: #20222a;
 }
 
@@ -30,6 +35,7 @@ a:hover{
 
 h3{
 	color: blue;
+	font-size: 12px;
 }
 
 .text{
@@ -44,10 +50,9 @@ h3{
 }
 
 .sponsor a img{
-	border: 1px solid;
-	border-color: white;
+	border: 1px solid white;
 }
 
 footer h3{
-	color:black;
+	color:silver;
 }
