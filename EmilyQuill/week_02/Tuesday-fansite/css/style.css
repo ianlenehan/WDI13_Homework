@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+main {
+    position: fixed;
+    top: 130px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+		max-height: 500px;
+		background-image: url('/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Tuesday-fansite/images/ada.jpeg');
+		background-position: center;
+		background-size: cover;
+		z-index: -1;
+		border-bottom: 3px solid #b2e5e5;
+		border-top: 3px solid #b2e5e5;
+}
+
+body, a {
+	text-decoration: none;
+	color: black;
+	font-family: 'Work Sans', sans-serif;
+	font-size: 20px;
+}
+
+.buzzfeed, a>p {
+	position: relative;
+	top: -28px;
+	left: -10px;
+	line-height: 0px;
+	font-size: 13px;
+	text-align: right;
+	font-family: 'Work Sans', sans-serif;
+
+}
+
+nav ul {
+	text-align: center;
+	padding: 0;
+}
+nav li {
+	display: inline-block;
+	padding: 40px;
+}
+
+a:hover {
+	color: #1aa3a3;
+}
+
+.box {
+	position: relative;
+	top: 300px;
+	margin: 0 auto;
+	max-width: 800px;
+	height: 150px;
+	background-color: rgba(255,255,255,0.7);
+	text-align: center;
+	line-height: 150px;
+	font-family: 'Dancing Script', cursive;
+	font-size: 30px;
+}
+.fa-quote-left {
+	position:relative;
+	top: -7px;
+	left: -10px;
+	color: #86becb;
+}
+
+.fa-quote-right {
+	position:relative;
+	left: 7px;
+	color: #86becb;
+
+}
