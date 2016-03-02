@@ -22,7 +22,7 @@ var isSquare = function(rectangle) {
     return true;
   } else {
     return false;
-  };
+  }
 };
 
 var area = function(r) {
@@ -104,12 +104,12 @@ var isObtuse = function(t) {
     thirdSide = t.sideB;
   } else {
     return false;
-  };
+  }
 
   if ((secondSide * secondSide) + (thirdSide * thirdSide) < (longestSide * longestSide)) {
     return true;
   } else {
     return false;
-  };
+  }
 
 };
