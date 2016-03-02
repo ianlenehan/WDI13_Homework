@@ -93,6 +93,10 @@ a:hover {
 	padding: 20px;
 }
 
+.trivia-box a {
+  font-style: italic;
+}
+
 .hometown-box {
 	position: relative;
 	top: 90px;
