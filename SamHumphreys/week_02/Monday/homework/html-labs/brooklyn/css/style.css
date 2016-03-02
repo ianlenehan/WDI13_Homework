@@ -21,7 +21,7 @@ body {
 }
 
 header {
-	color: #bbb;
+	color: #9d9e9d;
 	margin-top: 40px;
 	margin-bottom: 21px;
 	font-size: 28px;
@@ -39,14 +39,15 @@ img {
 
 .sponsorPics img {
 	display: inline-block;
-	border: 5px solid #bbb;
+	border: 5px solid #cfcfcf;
 	width: 225px;
 }
 
 .date {
-	color: blue;
+	color: #3789c1;
 }
 
 a {
 	text-decoration: none;
+	color: #3789c1;
 }
