@@ -1,0 +1,73 @@
+body{
+  margin:0 !important;
+}
+
+header{
+  height: 100%;
+  width: 100%;
+  border: 2px solid #DEFEA6;
+  background-color: #030303;
+
+
+
+}
+a{
+  color: #E0F6BB
+}
+.nav{
+  color: #E0F6BB;
+  list-style: none;
+  text-align: center;
+  font-weight: bold;
+}
+li{
+  text-align: center;
+  display: inline-block;
+  padding: 0 75px;
+}
+body{
+  background-color: #AEC090;
+}
+.size1{
+  box-shadow: 10px 10px 5px #888888;
+  border: 2px solid black;
+  border-radius: 100%;
+  position: static;
+}
+.size2{
+  box-shadow: 10px 10px 5px #888888;
+  border: 2px solid black;
+  width: 360px;
+  height: 480px;
+  border-radius: 100%;
+  position: static;
+
+}
+.size3{
+  box-shadow: 10px 10px 5px #888888;
+  border: 2px solid black;
+  width: 360px;
+  height:480px;
+  border-radius: 100%;
+  position: static;
+}
+div.imageBox{
+
+  text-align:center;
+  float: left;
+  padding: 20px 50px 20px 50px;
+
+}
+h1{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.hometext{
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+.larrysweb{
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+}
