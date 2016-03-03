@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700);
 
+
 body{
   font-family: 'VT323', sans-serif;
   background-color:#e8ff00;
@@ -8,18 +9,18 @@ body{
 }
 
 .container{
-  width: 960px;
+  max-width: 960px;
   background-color: white;
   margin: 0 auto;
 }
 
 nav{
-  width: 900px;
+  max-width: 900px;
   font-family: 'VT323', sans-serif;
   text-align: center;
   font-size: 2.5em;
   margin: 0 auto;
-  list-style-type: none;
+  list-style: none;
 }
 nav li{
   color: #e8ff00;
@@ -66,19 +67,16 @@ p{
 
 }
 
-.p1, .p2, .p3, .p4{
+/*.p1 .p2 .p3 .p4 .p5{
   padding-left: 100px;
-  width: 30%;
   display: inline-block;
+}*/
 
+/*.p1, .p2, .p3, .p4, .p5 img{
+  border-radius: 50%;
+  width: 30%;*/
 }
-
-.p1 img{
-  display: inline-block;
-  border-radius: 100%;
-  width: 200px;
-}
-.p2 img{
+/*.p2 img{
   border-radius: 100%;
   width: 200px;
 }
@@ -90,11 +88,15 @@ p{
 .p4 img{
   border-radius: 100%;
   width: 200px;
-}
-.p1, .p2, .p3, .p4 p{
+}*/
+
+/*.p1, .p2, .p3, .p4, .p p{
   color: black;
   font-size: 1.5em;
-  text-align: center;
+  text-align: left;
+}
+.p4 span li{
+  display: inline;
 }
 .p4 a{
   text-decoration: none;
@@ -104,4 +106,40 @@ p{
 
 .p4 li{
     list-style-type: none;
+}*/
+
+.facts{
+width: 600px;
+}
+
+.facts p{
+  font-size: 20px;
+  line-height: 2em;
+}
+.gallery{
+width: 600px;
+margin: 0 auto;
+}
+
+.gallery img{
+  width: 250px;
+}
+
+iframe{
+  width: 350px;
+}
+.video{
+  width: 750px;
+  margin: 0 auto;
+}
+
+/*.maps{
+  width 800px;
+  margin: 0 auto;
+}*/
+
+.maphome, .mapchurch{
+  width: 300px;
+  display: inline-block;
+  text-align: center;
 }
