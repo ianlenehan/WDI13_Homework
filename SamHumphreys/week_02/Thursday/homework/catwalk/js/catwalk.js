@@ -1,4 +1,5 @@
 var img = document.getElementsByTagName('img')[0];
+
 img.style.left = '0px';
 var delta = 1;
 var walkRefresh = 2;
@@ -16,23 +17,34 @@ var walk = function () {
       img.style.transform = 'scaleX(-1)';
     }
   }
-  if (leftMargin === (window.screen.width - 296)/2 - 100 ) {
-    savedDelta = delta;
-    delta = 0;
-    img.src = 'https://media.giphy.com/media/Qks6qkUTEmt6E/giphy.gif';
+  if (delta > 0 && leftMargin === 490){
+    changeCat();
+  }
+  if (delta < 0 && leftMargin === 494) {
+    changeCat();
   }
   leftMargin += delta;
   img.style.left = leftMargin+'px';
 };
 
-var dancingCat = function () {
-  console.log('dancing Cat');
-  img.src = 'https://media.giphy.com/media/Qks6qkUTEmt6E/giphy.gif';
+var changeCat = function () {
+  savedDelta = delta;
+  delta = 0;
+  img.style.left = (window.screen.width - 296) / 2 + 'px';
+  img.src = 'images/dancing.gif';
+  window.setTimeout(changeBack, 10000);
 };
 
-var normalCat = function () {
-  console.log('normalCat');
-  img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+var changeBack = function () {
+  img.src = 'images/cat-walk.gif';
+  delta = savedDelta;
+  if (savedDelta > 0) {
+    img.style.left = '500px';
+  }
+  if (savedDelta < 0) {
+    img.style.left = '485px';
+  }
 };
 
+//timing
 window.setInterval(walk, walkRefresh);
