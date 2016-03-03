@@ -17,3 +17,12 @@ var makeLib = function () {
 };
 
 runIt.addEventListener('click', makeLib);
+
+var header = document.getElementsByTagName('h1')[0];
+
+var mouseLogger = function (event) {
+  console.log('x', event.x, 'y', event.y);
+  console.log(event);
+};
+
+header.addEventListener('mousemove', mouseLogger);

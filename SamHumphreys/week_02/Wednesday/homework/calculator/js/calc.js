@@ -43,9 +43,46 @@ areaCircle.addEventListener('click', runMaths.areaCircleIt);
 
 //bonus stuff next...
 
-square.addEventListener('keypress', function(event) {
-  console.log('reads enter');
+var squareEnter = document.getElementById('square-input');
+var halveEnter = document.getElementById('half-input');
+var fraction1Enter = document.getElementById('percent1-input');
+var fraction2Enter = document.getElementById('percent2-input');
+var circleEnter = document.getElementById('area-input');
+
+squareEnter.addEventListener('keypress', function(event) {
   if (event.keyCode == 13) {
     runMaths.squareIt();
+  }
+});
+
+halveEnter.addEventListener('keypress', function(event) {
+  if (event.keyCode == 13) {
+    runMaths.halveIt();
+  }
+});
+
+fraction1Enter.addEventListener('keypress', function(event) {
+  if (fraction1Enter.value === '' || fraction2Enter.value === '') {
+    return;
+  } else {
+    if (event.keyCode == 13) {
+      runMaths.fractionIt();
+    }
+  }
+});
+
+fraction2Enter.addEventListener('keypress', function(event) {
+  if (fraction1Enter.value === '' || fraction2Enter.value === '') {
+    return;
+  } else {
+    if (event.keyCode == 13) {
+      runMaths.fractionIt();
+    }
+  }
+});
+
+circleEnter.addEventListener('keypress', function(event) {
+  if (event.keyCode == 13) {
+    runMaths.areaCircleIt();
   }
 });
