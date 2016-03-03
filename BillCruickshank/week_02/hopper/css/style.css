@@ -73,9 +73,18 @@ nav {
   height: 50px;
   width: 820px;
   margin:0 auto;
+  background: url(../img/nav_bkg.png);
+  background-position: 0px 50px;
 }
 
-.nav-links div {
+.nav-links a {
+  display: inline-block;
+  height:50px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.nav-links a div {
   display: inline-block;
   height: 50px;
   width: 200px;
