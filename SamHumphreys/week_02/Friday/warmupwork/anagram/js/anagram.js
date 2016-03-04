@@ -30,9 +30,18 @@ var doStuff = {
     }
   },
   giveMatches: function () {
-    data.message = 'The anagrams of ' + data.inputWord + ' are ';
-    for (var i = 0; i < data.matches.length; i ++) {
-      data.message += data.choices[i];
+    if (data.matches.length === 0) {
+      data.message = 'There are no anagrams of ' + data.inputWord;
+    } else if (data.matches.length === 1) {
+        data.message = 'The anagram of ' + data.inputWord + ' is ';
+        for (var i = 0; i < data.matches.length; i ++) {
+          data.message += data.choices[i];
+        }
+    } else if (data.matches.length > 1) {
+      data.message = 'The anagrams of ' + data.inputWord + ' are ';
+      for (var j = 0; j < data.matches.length-1; j ++) {
+        data.message += data.choices[j];
+      }
     }
     console.log(data.message);
   }
