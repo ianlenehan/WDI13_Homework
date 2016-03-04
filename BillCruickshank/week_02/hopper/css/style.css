@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+
+body {
+  background: url(../img/USS_Hopper.jpg);
+  height: 100%;
+}
+
+h1 {
+  text-align: center;;
+
+}
+
+.big {
+  font-size: 70px;
+  font-weight: 900;
+  margin: 0 auto;
+  color: #444444;
+  padding: 0.5em 1em;
+  font-family: Oswald;
+  text-align: center;
+}
+
+img {
+  display:block;
+  margin: 0 auto;
+}
+
+.portrait img {
+  margin: 10px auto;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.6);
+  max-width: 800px;
+  margin: 50px auto 100px;
+  padding: 1em 2em 1em;
+  border-radius: 4em;
+}
+
+h2 {
+  text-align: center;
+}
+
+.movie-bag {
+  text-align: center;
+}
+
+p {
+  text-indent: 2em;
+}
+
+.floaty {
+  float: right;
+}
+footer {
+  width: 100%;
+}
+
+html {
+  padding:0;
+}
+
+nav {
+  height: 50px;
+  width: 100%;
+  background: #424242;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+}
+
+.nav-links {
+  height: 50px;
+  width: 820px;
+  margin:0 auto;
+  background: url(../img/nav_bkg.png);
+  background-position: 0px 50px;
+}
+
+.nav-links a {
+  display: inline-block;
+  height:50px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.nav-links a div {
+  display: inline-block;
+  height: 50px;
+  width: 200px;
+}
+
+.nav-title {
+  background: url(../img/nav_bkg.png);
+  background-position: 0px 50px;
+}
+
+.nav-title:hover {
+  background-position: 0px 0px;
+}
+
+.nav-bio {
+  background: url(../img/nav_bkg.png);
+  background-position: -200px 50px;
+}
+
+.nav-bio:hover {
+  background-position: -200px 0px;
+}
+
+.nav-bio {
+  background: url(../img/nav_bkg.png);
+  background-position: -200px 50px;
+}
+
+.nav-bio:hover {
+  background-position: -200px 0px;
+}
+
+.nav-thank {
+  background: url(../img/nav_bkg.png);
+  background-position: -400px 50px;
+}
+
+.nav-thank:hover {
+  background-position: -400px 0px;
+}
+
+.nav-movie {
+  background: url(../img/nav_bkg.png);
+  background-position: -600px 50px;
+}
+
+.nav-movie:hover {
+  background-position: -600px 0px;
+}

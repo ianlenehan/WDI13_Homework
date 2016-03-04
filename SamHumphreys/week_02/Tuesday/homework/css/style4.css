@@ -1,0 +1,9 @@
+body {
+  background-color: black;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+img {
+  width: 110%;
+}
