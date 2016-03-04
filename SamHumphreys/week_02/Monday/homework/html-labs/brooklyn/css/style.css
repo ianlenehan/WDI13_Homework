@@ -1,6 +1,12 @@
+<<<<<<< HEAD
+/* 
+
+## Style Hints: 
+=======
 /*
 
 ## Style Hints:
+>>>>>>> 90d3fc8d7b98d78501f2bd15e567585fec295bc8
 
 Body Font Size = 12px
 	 Line Height = 17px
@@ -10,6 +16,8 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+<<<<<<< HEAD
+=======
 
 body {
 	font-size: 12px;
@@ -51,3 +59,4 @@ a {
 	text-decoration: none;
 	color: #3789c1;
 }
+>>>>>>> 90d3fc8d7b98d78501f2bd15e567585fec295bc8
