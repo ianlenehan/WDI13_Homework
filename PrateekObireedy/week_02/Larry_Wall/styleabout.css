@@ -1,0 +1,39 @@
+header{
+  height: 100%;
+  width: 100%;
+  border: 2px solid black;
+  background-color: #030303;
+}
+.nav{
+  color: #E0F6BB;
+  list-style: none;
+  text-align: center;
+  font-weight: bold;
+}
+li{
+  text-align: center;
+  display: inline-block;
+  padding: 0 75px;
+}
+a{
+  color: #E0F6BB;
+}
+body{
+  background-color: #AEC090;
+}
+img{
+  width: 500px;
+  height: 400px;
+}
+.textwrap{
+  float: right;
+  margin: 10px;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  text-align: justify;
+}
+p{
+  padding: 20px 20px 0px 20px;
+  padding-right: 30px;
+}

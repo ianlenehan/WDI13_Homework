@@ -1,0 +1,128 @@
+#wrapper {
+	height:400px;
+	background-image: url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/bg_wrapper.png");
+	background-color: white;
+}
+
+#container {
+	height:400px;
+	background-image: url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/bg_body.jpg");
+	background-color: white;
+	position: relative;
+}
+
+#main-content {
+	position: relative;
+	top:-700px;
+	left: 100px;
+	width: 800px;
+}
+			#blurb {
+				border: solid grey 1px;
+				border-bottom: solid white 1px;
+				border-right: solid white 1px;
+				padding: 25px;
+				background-image: url(/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/bg_blurb.jpg);
+			}
+			.photobanner > img {
+				width: 800px;
+			}
+
+#blurb p, #blurb img {
+	display: inline-block;
+}
+
+#blurb p {
+	width: 500px;
+}
+#nav {
+	height:85px;
+	color: white;
+	position: relative;
+	top: 0px;
+}
+		#nav li {
+			display: inline-block;
+			position: relative;
+			left:95px;
+			padding-left: 30px;
+			padding-top: 35px;
+			padding-bottom: 35px;
+			padding-right: 30px;
+		}
+
+		#nav li:hover {
+			background-image: url(/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/bg_nav_rollover.png);
+			background-position: 0px 0px;
+			background-repeat: repeat-x;
+
+		}
+
+img + img {
+	margin-bottom: -5px;
+	margin-top: -5px;
+}
+#logo, #social-media {
+	display: inline-block;
+}
+
+#social-media {
+	position: relative;
+	left: 300px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+			#linked-in {
+				width: 48px;
+				height: 48px;
+				display: inline-block;
+				background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -9px 57px;
+			}
+				#linked-in:hover {
+					background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -9px -7px;
+				}
+			#twitter {
+				width: 48px;
+				height: 48px;
+				display: inline-block;
+				background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -68px 57px;
+			}
+			#twitter:hover {
+				background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -68px -7px;
+			}
+			#facebook {
+				width: 48px;
+				height: 48px;
+				display: inline-block;
+				background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -127px 57px;
+			}
+			#facebook:hover {
+				background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -127px -7px;
+			}
+			#rss {
+				width: 48px;
+				height: 48px;
+				display: inline-block;
+				background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -184px 57px;
+			}
+			#rss:hover {
+				background:url("/Users/Emily/Projects/WDI13_Homework/EmilyQuill/week_02/Monday-html-css/html-labs/busyhands/images/socialNav.png") -184px -7px;
+			}
+
+#home-boxes {
+	width: 800px;
+}
+
+.home-box {
+	width: 240px;
+	display: inline-block;
+	margin: 10px;
+}
+
+.home-box img {
+	width:240px;
+}
+
+.home-box p {
+	font-size: 15px;
+}
