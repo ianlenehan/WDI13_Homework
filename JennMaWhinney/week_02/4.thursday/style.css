@@ -1,0 +1,10 @@
+body {
+  background-image: url(princess.jpg);
+  overflow: hidden;
+}
+
+img{
+  position: absolute;
+  left: 0;
+  /*transform: scaleX(-1);*/
+}
