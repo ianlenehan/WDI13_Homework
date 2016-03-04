@@ -1,0 +1,26 @@
+* {
+  font-family: Georgia, serif;
+}
+
+body {
+  max-width: 900px;
+  margin: 50px auto;
+}
+#solution {
+  color: tomato;
+  font-size: 2em;
+}
+
+button {
+  background-color: white;
+  border: 1px solid tomato;
+  font-size: 1em;
+  padding: 10px;
+}
+
+input {
+  font-size: 1em;
+  padding: 10px;
+
+
+}
