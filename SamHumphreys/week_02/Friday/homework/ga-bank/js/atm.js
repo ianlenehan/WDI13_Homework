@@ -1,14 +1,3 @@
-// * Make sure the balance in an account can't go negative. If a user tries to
-// withdraw more money than exists in the account, ignore the transaction.
-// When the balance of the bank account is $0 the background of that bank account
-// should be red. It should be gray when there is money in the account.
-// * What happens when the user wants to withdraw more money from the checking
-// account than is in the account? These accounts have overdraft protection, so if
-// a withdrawal can be covered by the balances in both accounts, take the checking
-// balance down to $0 and take the rest of the withdrawal from the savings account.
-// If the withdrawal amount is more than the combined account balance, ignore it.
-// * Make sure there is overdraft protection going both ways.
-
 var accDetails = {
   chkBalance: 50,
   svsBalance: 100,
@@ -63,16 +52,27 @@ var doStuff = {
     doStuff.updateVariables();
     if (isNaN(accDetails.chkAmount) || typeof accDetails.chkAmount !== 'number'){
       doStuff.updateAmounts();
+      doStuff.update();
       return;
     }
-    if (accDetails.chkBalance < accDetails.chkAmount) {
-      doStuff.updateAmounts();
-      return;
-    } else {
+    if (accDetails.chkBalance >= accDetails.chkAmount) {
       accDetails.chkBalance -= accDetails.chkAmount;
       doStuff.updateAmounts();
+      doStuff.update();
+      return;
     }
-    doStuff.update();
+    if (accDetails.chkAmount > accDetails.chkBalance + accDetails.svsBalance) {
+      doStuff.updateAmounts();
+      return;
+    }
+    if (accDetails.chkAmount <= accDetails.chkBalance + accDetails.svsBalance) {
+      accDetails.svsAmount = accDetails.chkAmount - accDetails.chkBalance;
+      accDetails.chkBalance = 0;
+      accDetails.svsBalance -= accDetails.svsAmount;
+      doStuff.updateAmounts();
+      doStuff.update();
+      return;
+    }
   },
   svsWithdrawal: function () {
     doStuff.updateVariables();
@@ -80,14 +80,24 @@ var doStuff = {
       doStuff.updateAmounts();
       return;
     }
-    if (accDetails.svsBalance < accDetails.svsAmount) {
-      doStuff.updateAmounts();
-      return;
-    } else {
+    if (accDetails.svsBalance >= accDetails.svsAmount){
       accDetails.svsBalance -= accDetails.svsAmount;
       doStuff.updateAmounts();
+      doStuff.update();
+      return;
     }
-    doStuff.update();
+    if (accDetails.svsAmount > accDetails.chkBalance + accDetails.svsBalance) {
+      doStuff.updateAmounts();
+      return;
+    }
+    if (accDetails.svsAmount <= accDetails.chkBalance + accDetails.svsBalance) {
+      accDetails.chkAmount = accDetails.svsAmount - accDetails.svsBalance;
+      accDetails.svsBalance = 0;
+      accDetails.chkBalance -= accDetails.chkAmount;
+      doStuff.updateAmounts();
+      doStuff.update();
+      return;
+    }
   },
   updateAmounts: function () {
     $('#savings-amount').val('');
