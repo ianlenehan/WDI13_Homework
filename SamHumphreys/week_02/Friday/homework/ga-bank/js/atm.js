@@ -2,7 +2,8 @@ var accDetails = {
   chkBalance: 50,
   svsBalance: 100,
   chkAmount: 0,
-  svsAmount: 0
+  svsAmount: 0,
+  errorMsg: ''
 };
 
 var doStuff = {
@@ -11,6 +12,8 @@ var doStuff = {
     $('#savings-balance').html('$ ' + accDetails.svsBalance);
     doStuff.validateBalance();
     doStuff.updateVariables();
+    $('#savings-amount').val('');
+    $('#checking-amount').val('');
   },
   validateBalance: function () {
     if (accDetails.chkBalance === 0) {
@@ -31,45 +34,48 @@ var doStuff = {
   chkDeposit: function () {
     doStuff.updateVariables();
     if (isNaN(accDetails.chkAmount) || typeof accDetails.chkAmount !== 'number'){
-      doStuff.updateAmounts();
+      accDetails.errorMsg = 'not a number';
+      errorMessages.error();
+      doStuff.update();
       return;
     }
     accDetails.chkBalance += accDetails.chkAmount;
-    doStuff.updateAmounts();
     doStuff.update();
   },
   svsDeposit: function () {
     doStuff.updateVariables();
     if (isNaN(accDetails.svsAmount) || typeof accDetails.svsAmount !== 'number'){
-      doStuff.updateAmounts();
+      accDetails.errorMsg = 'not a number';
+      errorMessages.error();
+      doStuff.update();
       return;
     }
     accDetails.svsBalance += accDetails.svsAmount;
-    doStuff.updateAmounts();
     doStuff.update();
   },
   chkWithdrawal: function () {
     doStuff.updateVariables();
     if (isNaN(accDetails.chkAmount) || typeof accDetails.chkAmount !== 'number'){
-      doStuff.updateAmounts();
+      accDetails.errorMsg = 'not a number';
+      errorMessages.error();
       doStuff.update();
       return;
     }
     if (accDetails.chkBalance >= accDetails.chkAmount) {
       accDetails.chkBalance -= accDetails.chkAmount;
-      doStuff.updateAmounts();
       doStuff.update();
       return;
     }
     if (accDetails.chkAmount > accDetails.chkBalance + accDetails.svsBalance) {
-      doStuff.updateAmounts();
+      accDetails.errorMsg = 'insufficent balance for that withdrawal';
+      errorMessages.error();
+      doStuff.update();
       return;
     }
     if (accDetails.chkAmount <= accDetails.chkBalance + accDetails.svsBalance) {
       accDetails.svsAmount = accDetails.chkAmount - accDetails.chkBalance;
       accDetails.chkBalance = 0;
       accDetails.svsBalance -= accDetails.svsAmount;
-      doStuff.updateAmounts();
       doStuff.update();
       return;
     }
@@ -77,31 +83,44 @@ var doStuff = {
   svsWithdrawal: function () {
     doStuff.updateVariables();
     if (isNaN(accDetails.svsAmount) || typeof accDetails.svsAmount !== 'number'){
-      doStuff.updateAmounts();
+      accDetails.errorMsg = 'not a number';
+      errorMessages.error();
+      doStuff.update();
       return;
     }
     if (accDetails.svsBalance >= accDetails.svsAmount){
       accDetails.svsBalance -= accDetails.svsAmount;
-      doStuff.updateAmounts();
       doStuff.update();
       return;
     }
     if (accDetails.svsAmount > accDetails.chkBalance + accDetails.svsBalance) {
-      doStuff.updateAmounts();
+      accDetails.errorMsg = 'insufficent balance for that withdrawal';
+      errorMessages.error();
+      doStuff.update();
       return;
     }
     if (accDetails.svsAmount <= accDetails.chkBalance + accDetails.svsBalance) {
       accDetails.chkAmount = accDetails.svsAmount - accDetails.svsBalance;
       accDetails.svsBalance = 0;
       accDetails.chkBalance -= accDetails.chkAmount;
-      doStuff.updateAmounts();
       doStuff.update();
       return;
     }
+  }
+};
+
+var errorMessages = {
+  error: function () {
+    var $errorMessage = $('<div>').attr('id', 'error').html('<p>INVALID INPUT - ' + accDetails.errorMsg + '</p>');
+    $errorMessage.css({'background-color': '#FF0000',
+                        'width': '700px',
+                        'margin': '0 auto',
+                        'text-align': 'center'});
+    $('body').append($errorMessage);
+    window.setTimeout(errorMessages.clearError, 2000);
   },
-  updateAmounts: function () {
-    $('#savings-amount').val('');
-    $('#checking-amount').val('');
+  clearError: function () {
+    $('#error').remove();
   }
 };
 
