@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+@import url(https://fonts.googleapis.com/css?family=Cabin);
+
+body {
+  background: url("https://pixabay.com/static/uploads/photo/2015/03/24/16/51/background-687823_960_720.jpg")
+}
+
+nav {
+  position: relative;
+  width: 100%;
+  top: 0px;
+}
+
+nav ul {
+  text-decoration: none;
+  text-align: center;
+  margin-top: 0px;
+  font-family: 'VT323';
+  background-color: #00B97F;
+  padding: 1em;
+
+}
+
+nav li {
+  display: inline;
+  color: white;
+  margin: 2em;
+  font-size: 30px;
+}
+
+nav ul a {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+}
+
+.container {
+  width: 960px;
+  margin: 100px auto;
+}
+
+h1 {
+  font-family: 'VT323';
+  font-size: 50px;
+}
+
+.photo img {
+  border: 3px solid #00B97F;
+}
+
+.bio p {
+  font-family: 'Cabin', sans-serif;
+  font-size: 20px;
+}
+
+h2 {
+  font-family: 'VT323';
+  font-size: 30px;
+}
+
+
+/* overflow scroll, linear-gradient*/
