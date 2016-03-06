@@ -47,3 +47,11 @@
   background-color: #F52F4F;
   color: #FFF;
 }
+
+.message {
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 25px;
+  font-family: arial;
+  border: 2px solid #E80808;
+}

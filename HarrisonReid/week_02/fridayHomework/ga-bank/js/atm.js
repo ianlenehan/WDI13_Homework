@@ -22,43 +22,50 @@ ATM = {
   savingsBalance: 0,
   setUp: function() {
     // Called on page load
-    this.updateAccountUI('savings');
-    this.updateAccountUI('checking');
+    this.updateAccountUI('Feel free to conduct a transaction.');
     this.assignButtonListeners();
   },
   assignButtonListeners: function() {
     // Assign listeners to deposit and withdraw buttons
     $('#checking-deposit').on('click', function() {
-      ATM.deposit("checking");
+      var message = ATM.deposit("checking");
+      ATM.updateAccountUI(message);
     });
     $('#checking-withdraw').on('click', function() {
-      ATM.withdraw("checking");
+      var message = ATM.withdraw("checking");
+      ATM.updateAccountUI(message);
     });
     $('#savings-deposit').on('click', function() {
-      ATM.deposit("savings");
+      var message = ATM.deposit("savings");
+      ATM.updateAccountUI(message);
     });
     $('#savings-withdraw').on('click', function() {
-      ATM.withdraw("savings");
+      var message = ATM.withdraw("savings");
+      ATM.updateAccountUI(message);
     });
   },
-  updateAccountUI: function(account) {
+  updateAccountUI: function(message) {
     // Check provided account balance and update the UI as appropriate, to be called after every successful account transaction.
-    var accountDisplay;
-    // Store applicable account display
-    if (account === 'checking') {
-      accountDisplay = $('#checking-balance');
-    } else if (account === 'savings') {
-      accountDisplay = $('#savings-balance');
-    }
-    // Check if zero balance warning needs to be applied or removed
-    if (this.getBalance(account) === 0 && !accountDisplay.hasClass('zero')) {
-      accountDisplay.addClass('zero');
-    } else if (this.getBalance(account) > 0 && accountDisplay.hasClass('zero')) {
-      accountDisplay.removeClass('zero');
-    }
-    // Update the balance displayed to reflect the correct current balance
-    $(accountDisplay).text("$" + this.getBalance(account));
+    var checkingDisplay = $('#checking-balance');
+    var savingsDisplay = $('#savings-balance');
+
+    var checkZeroBalance = function(account, accountObject) {
+      if (ATM.getBalance(account) === 0 && !accountObject.hasClass('zero')) {
+        accountObject.addClass('zero');
+      } else if (ATM.getBalance(account) > 0 && accountObject.hasClass('zero')) {
+        accountObject.removeClass('zero');
+      }
+    };
+
+    $(checkingDisplay).text("$" + this.getBalance('checking'));
+    $(savingsDisplay).text("$" + this.getBalance('savings'));
+    checkZeroBalance('checking',checkingDisplay);
+    checkZeroBalance('savings', savingsDisplay);
+
+    // APPEND THE MESSAGE TO MESSAGE AREA ON SCREEN...
+    $('#message').text(message);
   },
+
   getBalance: function (account) {
     if (account === "checking") {
       return this.checkingBalance;
@@ -84,43 +91,38 @@ ATM = {
     return parseInt(amount);
   },
   deposit: function(account) {
-    // Deposit into account
+    // Deposit into account - returns message stating if success or transaction failed
     var requestedDeposit = this.getInputAmount(account);
     // Check account that's required.
     if (account === 'savings') {
       this.savingsBalance += requestedDeposit;
-      this.updateAccountUI('savings');
-      return "Succesful transaction.";
+      return "Succesful deposit: $" + requestedDeposit;
     } else if (account === 'checking') {
       this.checkingBalance += requestedDeposit;
-      this.updateAccountUI('checking');
-      return "Succesful transaction.";
+      return "Succesful deposit: $" + requestedDeposit;
     }
   },
   withdraw: function(account) {
-    // Withdraw from account
+    // Withdraw from account - returns message stating if success or transaction failed
     var requestedWithdraw = this.getInputAmount(account);
     var accountBalance = this.getBalance(account);
     var overallBalance = this.getBalance('checking') + this.getBalance('savings');
     // Reject transaction if overall balance too low
     if (overallBalance < requestedWithdraw) {
-      return "Transaction failed. Insufficient funds.";
+      return "Withdrawl failed. Insufficient funds.";
     } else if (accountBalance >= requestedWithdraw) { // If enough in requested account, transact.
       this.setBalance(account, (accountBalance - requestedWithdraw));
-      this.updateAccountUI(account);
+      return "Successful withdrawl from " + account + ": $" + requestedWithdraw;
     } else { // Else if enough in both withdraw from both
       this.setBalance(account, 0);
       if (account === 'savings') {
         this.setBalance('checking', (overallBalance - requestedWithdraw));
-        this.updateAccountUI('savings');
-        this.updateAccountUI('checking');
+        return "Successful withdrawl. Savings account had Insufficient funds, the remainder has been withdrawn from checking account. Total withdrawl: $" + requestedWithdraw;
       } else if (account === 'checking') {
         this.setBalance('savings', (overallBalance - requestedWithdraw));
-        this.updateAccountUI('savings');
-        this.updateAccountUI('checking');
+        return "Successful withdrawl. Checking account had Insufficient funds, the remainder has been withdrawn from savings account. Total withdrawl: $" + requestedWithdraw;
       }
     }
-    return "Successful transaction.";
   }
 };
 
