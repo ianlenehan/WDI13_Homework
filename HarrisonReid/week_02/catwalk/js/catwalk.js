@@ -74,11 +74,11 @@ var spawnCat = function() {
 // Clean this code up into disco object...
 
 var disco = document.getElementsByClassName('discoOverlay')[0];
-var colors = ['pink', 'orange', 'red', 'white', 'blue', 'yellow', 'red', 'purple', 'white', 'green']
+var colors = ['pink', 'orange', 'red', 'white', 'blue', 'yellow', 'red', 'purple', 'white', 'green'];
 var currentColorIndex = 0;
 var isDisco = false;
-var september = new Audio('audio/september.wav');
-var flutes = new Audio('audio/flutes.wav');
+var september = new Audio('audio/september.mp3');
+var flutes = new Audio('audio/flutes.mp3');
 flutes.play();
 var discoTimeout;
 
