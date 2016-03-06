@@ -14,7 +14,7 @@ header {
 
 }
 
-}
+
 
 
 #nav {
@@ -51,6 +51,7 @@ body {
   				border-right: solid white 1px;
   				padding: 10px;
           padding-top: 10px;
+          height: 100px;
 
 }
 
@@ -59,10 +60,7 @@ body {
 }
 
 #blurb img {
-  /* Fix me */
-  /* Fix me */
-  /* Fix me */
-  /* Fix me */
+margin-left:200px;
 }
 
 #blurb p {
@@ -85,6 +83,4 @@ margin-top: 20px;
   padding: 2px;
   border: 4px solid lightgrey;
   width: 274px; /* Declare your value. Can be in relative units. */
-  display: inline-block;
-  vertical-align: top;
 }
