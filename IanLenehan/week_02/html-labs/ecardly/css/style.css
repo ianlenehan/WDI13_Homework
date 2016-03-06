@@ -29,7 +29,7 @@ Developer @GA in NYC
 
 body {
   background-color: #d6d6d6;
-  background-image: url('/Users/IRL/Projects/html-labs/ecardly/images/background.jpg');
+  background-image: url('../images/background.jpg');
   background-repeat: repeat-x;
   padding-bottom: 100px;
 }
@@ -44,7 +44,7 @@ h2 {
 
 #logo_image {
   display: block;
-  background-image: url('/Users/IRL/Projects/html-labs/ecardly/images/logo.png');
+  background-image: url('../images/logo.png');
   width: 216px;
   height: 213px;
   text-indent: -9999px;

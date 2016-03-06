@@ -57,7 +57,7 @@
 
 #logo_image {
   display: block;
-  background-image: url('/Users/IRL/Projects/html-labs/busyhands/images/logo.png');
+  background-image: url('../images/logo.png');
   width: 291px;
   height: 54px;
   text-indent: -9999px;
@@ -66,7 +66,7 @@
 
 #icons {
   display: block;
-  background-image: url('/Users/IRL/Projects/html-labs/busyhands/images/socialNav.png');
+  background-image: url('../images/socialNav.png');
   width: 291px;
   height: 54px;
   text-indent: -9999px;
@@ -81,7 +81,7 @@
 }
 
 #bottom_half {
-	background-image: url('/Users/IRL/Projects/html-labs/busyhands/images/bg_body.jpg');
+	background-image: url('../images/bg_body.jpg');
 	background-repeat: repeat;
 	margin-top: -150px;
 	height: 500px;
@@ -89,11 +89,12 @@
 
 #quote_box {
 	padding: 150px 0 0 50px;
+	margin: 0 auto;
 
 }
 #quote_text {
 	display: inline-block;
-	width: 60%;
+	width: 100px;
 }
 
 #quote_button {
