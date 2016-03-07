@@ -117,7 +117,7 @@ var errorMessages = {
                         'margin': '0 auto',
                         'text-align': 'center'});
     $('body').append($errorMessage);
-    window.setTimeout(errorMessages.clearError, 2000);
+    window.setTimeout(errorMessages.clearError, 3000);
   },
   clearError: function () {
     $('#error').remove();
