@@ -25,15 +25,55 @@
 
 // catWalk Basic
 
-var img = document.getElementsByTagName("img")[0];
-img.style.left = "0px";
+// var img = document.getElementsByTagName("img")[0];
+// img.style.left = "0px";
+// img.style.position = "absolute";
+//
+// var catWalk = function () {
+//   var pos = parseInt(img.style.left) + 1;
+//   img.style.left = pos + "px";
+// };
+//
+// setInterval(catWalk, 50);
+//
+// // Bonus #1
+//
+// var img = document.getElementsByTagName('img')[0];
+// img.style.position = "absolute";
+// img.style.left = '-200px';
+// var catWalk = function () {
+//   var currentPos = parseInt(img.style.left);
+//   img.style.left = (currentPos + 5) + 'px';
+//   if (currentPos > window.innerWidth) {
+//     img.style.left = '-200px';
+//   }
+// }
+// setInterval(catWalk, 50);
+
+// Bonus #2
+
+var img = document.getElementsByTagName('img')[0];
+
+// variables
+var leftBorder = 0;
+var rightBorder = window.innerWidth;
+var catWidth = 200;
+var delta = 5;
+
 img.style.position = "absolute";
+img.style.left = String(-catWidth)+'px';
 
 var catWalk = function () {
-  var pos = parseInt(img.style.left) + 1;
-  img.style.left = pos + "px";
-};
+  var position = parseInt(img.style.left);
+  img.style.left = String(position + delta) + 'px';
+  if (position > rightBorder) {
+    delta = -5;
+  }
+  if (position < leftBorder-catWidth){
+    delta = 5;
+  }
+}
 
-setInterval(catWalk, 50);
+setInterval(catWalk, 10);
 
-// Bonus #1
+// Bonus #3
