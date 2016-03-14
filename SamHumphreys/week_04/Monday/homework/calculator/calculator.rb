@@ -186,7 +186,19 @@ def specialty_trip
 end
 
 def specialty_mortgage
-  puts "spec mort"
+  print "What is the current interest rate per year as a percentage? "
+  int_rt = get_number / 12 / 100
+  print "How many years is your mortgage for? "
+  nper = get_number * 12
+  print "What is the value of your mortgage? "
+  pv = get_number
+  maths_bit = (1 + int_rt) ** nper
+  monthly = pv * ((int_rt * maths_bit) / (maths_bit -1))
+  total = monthly * nper
+  interest = total - pv
+  puts "Your monthly payment is $#{'%.2f' % monthly}"
+  puts "You will pay back a total of #{'%.2f' % total}"
+  puts "You will pay #{'%.2f' % interest} in interest"
 end
 
 
