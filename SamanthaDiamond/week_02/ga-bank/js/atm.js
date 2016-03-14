@@ -84,6 +84,6 @@ var backgroundSavings = function () {
 };
 
 
-// save this into new variable in obj as => var self = this; 
+// save this into new variable in obj as => var self = this;
 // $('a').on('click', function() {
 // });
