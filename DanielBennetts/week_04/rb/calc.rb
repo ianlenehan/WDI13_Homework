@@ -49,6 +49,13 @@ end
 def bmi_calculator
   puts "Welcome to the BMI calculator"
 
+  weight = get_user_selection("Please enter your weight in KGs: ").to_f
+  height = get_user_selection("Please enter your height in M: ").to_f
+
+puts "#{weight} / (#{height} * #{height}) = #{weight/(height*height)}"
+
+
+end
 main_menu
 menu_choice = get_user_selection("Please enter your selection: ").downcase
 
@@ -58,6 +65,8 @@ until menu_choice == 'q'
     basic_calculator
   when 'a'
     advanced_calculator
+  when 'h'
+    bmi_calculator
   else
     puts "Invalid Selection"
   end
