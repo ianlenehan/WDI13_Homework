@@ -93,17 +93,17 @@ def mortgage_calculator
   principal = get_user_selection("Enter the value to your mortgage loan (i.e. principal): ")
   annual_interest_rate = get_user_selection("Enter the value of your annual interest rate as a decimal (e.g. 6% = 0.06): ")
   term_years = get_user_selection("Enter the value of your loan term in years: ")
-  monthly_interest_rate = (annual_interest_rate.to_f / 12).to_f
-  term_months = (term_years.to_i * 12).to_i
+  monthly_interest_rate = (annual_interest_rate.to_f / 12)
+  term_months = (term_years.to_i * 12)
 
-  puts (principal.to_i(monthly_interest_rate(1 + monthly_interest_rate) ** term_months) / (((1 + monthly_interest_rate) ** term_months) - 1))
+  puts (principal.to_i((monthly_interest_rate(1 + monthly_interest_rate)) ** term_months) / (((1 + monthly_interest_rate) ** term_months) - 1))
 end
 
 def bmi_calculator
   weight = get_user_selection("Enter your weight in kg: ")
   height = get_user_selection("Enter your height in meters: ")
 
-  puts (weight.to_i / Math.sqrt( height.to_f )).round(2)
+  puts "Your BMI is #{(weight.to_i / Math.sqrt( height.to_f )).round(2)}kg/m2"
 end
 
 def trip_calculator
@@ -114,8 +114,8 @@ def trip_calculator
   price_per_gallon = get_user_selection("Enter the total price of fuel per gallon:  ")
   speed_per_hour = get_user_selection("Enter the speed in miles per hour travelled:  ")
 
-  puts (distance.to_f / speed_per_hour.to_i).round(2)
-  puts ((distance.to_i / miles_per_gallon.to_f) * price_per_gallon.to_f).round(2)
+  puts "Your trip will take #{(distance.to_f / speed_per_hour.to_i).round(2)} hours."
+  puts "Your trip will cost $#{((distance.to_i / miles_per_gallon.to_f) * price_per_gallon.to_f).round(2)}."
 end
 
 main_menu
