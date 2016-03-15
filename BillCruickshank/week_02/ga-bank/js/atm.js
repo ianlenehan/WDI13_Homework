@@ -66,7 +66,7 @@ var withdraw = function() {
   var names = account.priorityList;
   for (var i = 0; i < names.length; i++) {
     var anAccount = user.accounts[names[i]];
-    if (anAccount.balance < amount ){
+    if (anAccount.balance <= amount ){
       amount -= anAccount.balance;
       anAccount.balance = 0;
       anAccount.updateDisplay();
