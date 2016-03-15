@@ -27,7 +27,10 @@ var withdrawalParty = function() {
 
   setTimeout(function() {
     // put the cat back to where he was and clear the audio
-    $('.mainCat').css({left: '-530px', display: 'block'});
+    $('.mainCat').css({
+      left: '-530px',
+      display: 'block'
+    });
     $('.audio').attr('src', '');
   }, 8000);
 };
@@ -105,7 +108,9 @@ $(document).ready(function() {
     totalBalance = (depositValue + totalBalance);
     var currentVal = $('#savings .balance').text();
     $('#savings .balance').text('$' + savingsBalance); + $('#savings-amount').val('');
-    $('#savings .balance').css({'background-color': '#E3E3E3'});
+    $('#savings .balance').css({
+      'background-color': '#E3E3E3'
+    });
     depositSound();
 
   });
