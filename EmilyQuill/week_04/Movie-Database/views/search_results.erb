@@ -1,4 +1,5 @@
 <p>
+  <h3> Search results for "<%= @search_term %>": </h3>
   <% @results["Search"].each do |i| %>
   <p><a href="/result/<%=i["imdbID"]%>"><%= i["Title"] %></a></p>
   <% end %>
