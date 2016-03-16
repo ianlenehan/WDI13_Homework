@@ -19,17 +19,44 @@ var makeAccountType = function(name, balance){
       $('#'+this.name+'-amount').val('');
       amount = parseInt(string)
       if (!amount) {
-        alert('Please provide a positive number.')
+        alert('(⊙_◎) Please provide a positive number.')
       }
       return amount;
     },
     deposit : function () { //bind to a single account, no hassle.
+      debugger;
       amount = this.getAmount();
       if (!amount) {
-        return
+        return false;
       }
       this.balance += amount;
       this.updateDisplay();
+      return true;
+    },
+    withdraw : function() {
+      var account = this.user.accounts[this.name];
+      var amount = account.getAmount();
+      if (!amount) {
+        return false;
+      }
+      var user = this.user;
+      if (user.totalBalance() < amount) {
+        alert("ಠ_ಠ you don't have the funds for that ಠ_ಠ")
+        return false;
+      }
+      var names = account.priorityList;
+      for (var i = 0; i < names.length; i++) {
+        var anAccount = user.accounts[names[i]];
+        if (anAccount.balance <= amount ){
+          amount -= anAccount.balance;
+          anAccount.balance = 0;
+          anAccount.updateDisplay();
+        } else {
+          anAccount.balance -= amount
+          anAccount.updateDisplay();;
+          return true;
+        }
+      }
     }
   };
   account.getAmount = account.getAmount.bind(account);
@@ -39,49 +66,22 @@ var makeAccountType = function(name, balance){
   return account;
 };
 
-var makeAccountPriorityLists = function (user) {
+var makeAccountPriorityLists = function (user) { //withdraw from low indices first.
   names = user.accountNames();
   for (var i = 0; i < names.length; i++) {
     var array = [];
     array[0] = names[i];
-    for (var j = 0; j < names.length; j++) {
-      array[j+1] = names[j];
-    }
+    array.concat(names);
     console.log(array);
     user.accounts[names[i]].priorityList = array;
-  }
-}
-
-var withdraw = function() {
-  var account = this.user.accounts[this.name];
-  var amount = account.getAmount();
-  if (!amount) {
-    return false;
-  }
-  var user = this.user;
-  if (user.totalBalance() < amount) {
-    alert("ಠ_ಠ you don't have the funds for that ಠ_ಠ")
-    return false;
-  }
-  var names = account.priorityList;
-  for (var i = 0; i < names.length; i++) {
-    var anAccount = user.accounts[names[i]];
-    if (anAccount.balance <= amount ){
-      amount -= anAccount.balance;
-      anAccount.balance = 0;
-      anAccount.updateDisplay();
-    } else {
-      anAccount.balance -= amount
-      anAccount.updateDisplay();;
-      return true;
-    }
   }
 }
 
 var makeWithdrawMethods = function(user) {
   names = user.accountNames();
   for (var i = 0; i < names.length; i++) {
-    user.accounts[names[i]].withdraw = withdraw.bind(
+    account = user.accounts[names[i]]
+    account.withdraw = account.withdraw.bind(
       {
         name:names[i],
         user:user

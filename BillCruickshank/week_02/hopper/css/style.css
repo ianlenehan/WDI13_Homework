@@ -71,8 +71,9 @@ nav {
 
 .nav-links {
   height: 50px;
-  width: 820px;
+  width: 800px;
   margin:0 auto;
+  font-size: 0;
   background: url(../img/nav_bkg.png);
   background-position: 0px 50px;
 }
