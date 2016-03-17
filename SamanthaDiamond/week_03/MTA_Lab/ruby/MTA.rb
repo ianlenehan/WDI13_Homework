@@ -45,34 +45,24 @@ def departure_station_index
   @lines[@departure_line].index @departure_station
 end
 
-# puts departure_station_index
-
 def arrival_station_index
   @lines[@arrival_line].index @arrival_station
 end
-
-# puts arrival_station_index
-
-# binding.pry
 
 def union_square_index(line)
   @lines[line].index "union square"
 end
 
-# puts union_square_index(@departure_line)
-
 def travel_forward(start_station, end_station, line)
   line = @lines[line]
-  line[start_station..end_station].each do |i|
+  line[start_station+1..end_station].each do |i|
     @travel_route << i
   end
 end
 
-# puts travel_forward(departure_station_index, arrival_station_index)
-
 def travel_backward(start_station, end_station, line)
   line = @lines[line]
-  line[end_station..start_station].reverse.each do |i|
+  line[end_station+1..start_station].reverse.each do |i|
     @travel_route << i
   end
 end
@@ -84,7 +74,7 @@ def plan_trip
     else
       travel_backward(departure_station_index, arrival_station_index,@departure_line)
     end
-    puts "You must travel through the"
+    # puts "You must travel through the following stops on the #{@departure_line} line: #{@travel_route}"
   else
     if departure_station_index < union_square_index(@departure_line)
       travel_forward(departure_station_index, union_square_index(@departure_line),@departure_line)
