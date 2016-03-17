@@ -1,0 +1,18 @@
+<% m =  @mathematician[0] %>
+
+<h2><%= m["name"] %></h2>
+<p><%= m["circa"] %></p>
+<p>Famous for: <%= m["fame"] %> </p>
+<p><a href="<%= m["link_url"] %>"><%= m["link_title"] %></a></p>
+<img src="<%= m["img"] %>" alt="">
+
+<nav>
+  <ul>
+    <li>
+      <a href="/mathematicians/<%= m["id"] %>/delete">Delete</a></p>
+    </li>
+    <li>
+      <a href="/mathematicians/<%= m["id"] %>/edit">Edit</a></p>
+    </li>
+  </ul>
+</nav>
