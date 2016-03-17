@@ -20,6 +20,7 @@ get "/details/:a" do
   @movie_year = @search["Year"]
   @movie_plot = @search["Plot"]
   @movie_poster = @search["Poster"]
+  @movie_director = @search["Director"]
   erb :details
 end
 
