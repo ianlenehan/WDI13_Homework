@@ -8,7 +8,11 @@ var bank = {
     var runningTotal = 0;
     for (var i = 0; i < bank.accounts.length; i++) {
       runningTotal += bank.accounts[i].currentBalance;
+<<<<<<< HEAD
+    };
+=======
     }
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
     return runningTotal;
   },
   addAccount: function(name, balance) {
@@ -30,7 +34,11 @@ var bank = {
           return false;
         }
       }
+<<<<<<< HEAD
+    }
+=======
     };
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
   bank.accounts.push(newAccount);
   console.log("Added a new account for " + name + ". Opening balance: $" + balance + "." );
   },
@@ -38,7 +46,11 @@ var bank = {
     console.log("Attempting transfer of $" + amount + " from " + fromAccount + " to " + toAccount + ".");
     if (this.findAccount(fromAccount).withdraw(amount)) { // Check withdrawl is successfully completed before issuing deposit.
       this.findAccount(toAccount).deposit(amount); // Deposits withdrawn funds
+<<<<<<< HEAD
+      console.log("Successfully transferred $" + amount + " from " + fromAccount + " to " + toAccount + "." )
+=======
       console.log("Successfully transferred $" + amount + " from " + fromAccount + " to " + toAccount + "." );
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
       return true;
     } else {
       console.log("Transfer Failed.");
@@ -49,11 +61,18 @@ var bank = {
     for (var i = 0; i < bank.accounts.length; i++) {
       if (bank.accounts[i].accountName === name) {
         return bank.accounts[i];
+<<<<<<< HEAD
+      };
+    };
+  },
+}
+=======
       }
     }
   },
 };
 
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
 
 //-------------------  The Story of how Harry got all the money. ----------------------//
 
