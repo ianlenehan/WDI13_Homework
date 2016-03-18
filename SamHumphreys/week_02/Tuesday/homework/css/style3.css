@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+body {
+  font-family: "Press Start 2P", sans-serif;
+  background: url("../images/matrix.gif");
+  background-size: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 960px;
+  background-color: black;
+}
+
+a:link{
+  text-decoration: none;
+  color: white;
+}
+a:visited {
+  text-decoration: none;
+  color: #00CC00;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  width: 99%;
+  color: white;
+  text-align: center;
+  font-size: 67px;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-size: 20px;
+  text-align: justify;
+}
+
+ul {
+  text-align: center;
+  padding-left: 0;
+}
+
+li {
+  display: inline;
+  font-size: 18px;
+  padding: 0 5px 0 5px;
+}
+
+div {
+}
+
+.text, .picture {
+  display: inline-block;
+}
+
+.text {
+  color: white;
+  width: 98%;
+  vertical-align: top;
+}
+
+.picture {
+  width: 35%;
+}
+
+img {
+  border-radius: 2em;
+  width: 100%;
+}

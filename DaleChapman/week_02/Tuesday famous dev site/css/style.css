@@ -1,0 +1,266 @@
+@import url(https://fonts.googleapis.com/css?family=Caveat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+h2 {
+    margin-top: 1px;
+    color: #eee;
+    font-size: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    padding: 10px;
+}
+h3 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+h4 {
+    line-height: 36px;
+    padding: 20px;
+    margin: 0px;
+    font-size: 32px;
+}
+body {
+    font-family: "open sans", sans-serif;
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+nav {
+    position: fixed;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: #161616;
+}
+.nav-container {
+    text-align: center;
+}
+.nav-item a {
+    color: #fff;
+    text-decoration: none;
+}
+.nav-item a:hover {
+    color: #111;
+    background-color: #fff;
+}
+.nav-item {
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    display: inline-block;
+    padding: 10px 10px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.nav-item:hover {
+    background-color: #fff;
+    border-bottom: 5px solid #dbdbdb;
+}
+.ruby-img {
+    width: 90px;
+    display: inline-block;
+    margin: 0px auto -50px;
+    padding: 0px 30px 10px 20px;
+    float: none;
+}
+.nav-bar {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    float: none;
+    text-align: center;
+}
+.ruby-img {
+    -webkit-transform: perspective(675px) rotate(45deg);
+    transform: perspective(675px) rotate(45deg);
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+.hero-section {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-color: #111;
+    background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)), url('../images/bg-yuki.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .35)), url('../images/bg-yuki.jpg');
+    background-position: 0px 0px, 0px 0px;
+    background-size: auto, cover;
+}
+h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px 40px;
+    color: #f0f0f0;
+    font-size: 85px;
+    line-height: 70px;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+}
+.hero-container {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+.profile-img {
+    width: 225px;
+    margin-bottom: 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 10px solid #000;
+    border-radius: 50%;
+}
+.multi-col {
+    width: 33%;
+    position: static;
+    display: inline-block;
+    ;
+    margin: 60px auto 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+.multi-col-text {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 16px;
+}
+.open-source-img {
+    width: 150px;
+}
+.ruby-shield-img {
+    width: 138px;
+}
+.cross-img {
+    width: 150px;
+}
+.multi-col-heading {
+    margin-bottom: 15px;
+}
+.multi-col-txt {
+    padding: 10px 20px;
+}
+.video-section {
+    border-bottom: 1px none #000;
+    background-color: #222;
+}
+.video-container {
+    display: block;
+    margin: auto;
+    padding: 100px 0px;
+    text-align: center;
+}
+.video {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0px;
+    text-align: center;
+}
+.about-me-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #dbdbdb;
+    background-image: none;
+    background-size: auto;
+}
+.about-me-container {
+    display: block;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: 10px none #000;
+    border-radius: 0px;
+    background-color: transparent;
+}
+.about-me-div {
+    position: static;
+    display: block;
+    margin: 10px auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: #333;
+    font-size: 55px;
+    line-height: 65px;
+    text-align: left;
+}
+.about-text {
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    color: #333;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+}
+.left-about-div {
+    display: inline-block;
+    width: 60%;
+    padding: 5px 10px 10px 30px;
+    float: left;
+    border-radius: 0px;
+    background-color: rgba(77, 77, 77, 0);
+}
+.resources-div {
+    display: inline-block;
+    margin-left: 40px;
+    padding: 30px 30px;
+    border-radius: 10px;
+    background-color: #007ccf;
+}
+.button {
+    display: block;
+    margin: 5px auto 10px;
+    padding: 10px 15px;
+    border: 2px solid #373e4d;
+    border-radius: 5px;
+    background-color: rgba(30, 95, 139, .56);
+    color: #fff;
+    font-size: 22px;
+    line-height: 36px;
+    text-align: center;
+}
+.button:hover {
+    background-color: #333;
+}
+.footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #202020;
+}
+.legal-text {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    color: #f1f1f1;
+    font-size: 16px;
+    text-align: center;
+}
+.legal-links {
+    color: #fff;
+    text-decoration: none
+}
+@media screen and (max-width: 800px) {
+    .multi-col {
+        width: 100%;
+    }
+    .multi-col-txt {
+        padding: 10px 30px;
+    }
+    .about-me-container {
+        text-align: center;
+    }
+    .left-about-div {
+        width: 90%;
+        padding: 20px 30px;
+        margin: 0;
+        text-align: center;
+    }
+    .right-about-div {
+        width: 100%;
+    }
+    .resources-div {
+        width: 80%;
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 560px) {}

@@ -1,0 +1,51 @@
+
+@keyframes fade-in-and-out {
+  0% {
+  opacity: 0;
+transform: rotate(360deg);
+
+  }
+
+75% {
+  opacity: 0.7;
+  transform: rotate(200deg);
+}
+
+  100% {
+opacity: 1;
+transform: rotate(1deg);
+
+  }
+}
+
+h1 {
+  animation: fade-in-and-out 2s infinite alternate;
+}
+
+body {
+  background-color: hotpink;
+  color: aliceblue;
+  background-image: url("http://www.windscreenleak.com/images/DSCF0073.JPG");
+  width:100%
+  height:0 auto;
+}
+
+
+.container {
+  width: 80%;
+  margin: 400px auto;
+  padding: 10px;
+  box-shadow: 0px 0px 40px 5px lavenderblush;
+
+
+}
+
+h1 {
+  text-shadow: 5px 5px 10px black;
+    transition: all 1s linear 0.2s;
+}
+
+h1:hover {
+  color: mediumaquamarine;
+  cursor: pointer;
+}
