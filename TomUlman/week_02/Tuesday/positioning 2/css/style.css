@@ -1,0 +1,41 @@
+
+@import url(https://fonts.googleapis.com/css?family=UnifrakturMaguntia);
+
+body {
+  background-color: #007799;
+  font-family:'UnifrakturMaguntia';
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+nav li {
+  list-style:none;
+  display: inline-block;
+}
+
+nav ul {
+  padding-left: 0;
+}
+nav a {
+  color: pink;
+  text-decoration: none;
+}
+.main, .side{
+  display:inline-block;
+}
+
+.main {
+  width:80%;
+  border: 1px solid pink;
+}
+
+.side {
+  width: 15%;
+  background-color: #225599;
+  vertical-align: top;
+  padding: 1em;
+  border-radius: 1em;
+}

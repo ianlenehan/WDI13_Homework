@@ -1,0 +1,195 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Rozha+One|Lily+Script+One);
+
+.wrapper
+{
+    max-width: 100%;
+    height: 200px;
+    margin: 0 auto;
+}
+
+
+/* ===========================================================================*/
+/*removes top and bottom white space margins from normalize */
+
+p,
+pre
+{
+    margin: 0;
+}
+
+dl,
+menu,
+ol,
+ul
+{
+    margin: 0;
+}
+
+p,
+pre
+{
+    margin: 55px;
+}
+
+/* ===========================================================================*/
+
+
+.navbar
+{
+    line-height: 80px;
+
+    width: 400px;
+    height: 80px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    opacity: .9;
+    border-radius: 20px;
+    background-color: black;
+    z-index: 3;
+}
+
+
+.navbar li
+{
+    display: inline;
+
+    padding: 10px;
+
+    text-align: center;
+}
+
+a:-webkit-any-link
+{
+    cursor: auto;
+    text-align: center;
+    text-decoration: none;
+
+    color: lightgrey;
+}
+
+li
+{
+    font-family: 'Lily Script One';
+    font-size: 24px;
+}
+
+body
+{
+    width: 100%;
+
+    text-align: center;
+    /*Refer to url below, has to jump out off css folder and back into images */
+
+    background-image: url('../images/marble2.jpg');
+}
+
+h1
+{
+    font-family: 'Lily Script One';
+    font-size: 36px;
+
+    margin-bottom: 50px;
+}
+
+.bodywrap
+{
+    width: 780px;
+    height: 200px;
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.bodytext
+{
+    position: absolute;
+    z-index: 3;
+
+    width: 100%;
+    height: 200px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+
+    opacity: .7;
+    color: white;
+    background-color: black;
+}
+
+.sink
+{
+    position: relative;
+    z-index: -2;
+    bottom: 20px;
+}
+
+.foodbugcontainer
+{
+    position: relative;
+    bottom: 130px;
+
+    width: 100%;
+    height: auto;
+}
+
+
+.food
+{
+    position: absolute;
+    z-index: 1;
+    bottom: 50px;
+    left: 340px;
+
+    width: 100px;
+    height: 100px;
+}
+
+.food img
+{
+    width: 100%;
+    height: auto;
+}
+
+/* ===========================================================================*/
+/*bugs and animation */
+
+
+
+
+
+.splat
+{
+    position: absolute;
+    z-index: -2;
+    bottom: 70px;
+    left: 200px;
+
+    width: 30px;
+    height: 30px;
+}
+
+/* ===========================================================================*/
+
+
+
+.splat2
+{
+    position: absolute;
+    z-index: -1;
+    bottom: 10px;
+    left: 300px;
+
+    width: 200px;
+    height: 200px;
+}
+
+.splat2 img
+{
+    width: 100%;
+    height: auto;
+}
+
+/* ===========================================================================*/

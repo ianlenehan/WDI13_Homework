@@ -1,0 +1,172 @@
+/*
+At least 3 pages (example: biography, trivia, hometown)
+At least 1 Google Font
+Whatever HTML and CSS you desire
+Keep your code clean and DRY
+Start working with semantic elements: http://html5doctor.com/lets-talk-about-semantics/
+No Javascript! Even if you know how to use jQuery, see how far you can push this with pure HTML + CSS
+Don't worry about responsiveness -- desktop resolution is fine
+Your research should aim to reveal at least two things about each person:
+
+Why Joel admires them
+Something Joel doesn't already know about them
+Optional extras
+
+Experiment with http://fortawesome.github.io/Font-Awesome/
+Try embedding media (YouTube or Vimeo video, Soundcloud, podcasts)
+Try embedding a Google map (for their hometown and/or alma mater)
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Gruppo);
+
+body {
+  font-family: 'Gruppo', sans-serif;;
+  background-color: darkgrey;
+  text-align: center;
+}
+
+.container {
+  background-color: white;
+  /*background: linear-gradient(to right, white 20%, lightblue, white 80%);*/
+
+}
+
+.header {
+  height: 130px;
+  vertical-align: middle;
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+  background-color: black;
+}
+
+h1 {
+  color: rgb(146,227,227);
+  line-height: 131px;
+  font-size: 50px;
+}
+
+.core {
+  min-height: 500px;
+  padding-bottom: 50px;
+  margin: 50px 100px;
+}
+
+.coreMain {
+  min-height: 500px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+
+.logo {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  vertical-align: middle;
+}
+
+.side, .main, .photo {
+  display:inline-block;
+}
+
+.side  {
+  width: 20%
+  border: 1px solid blue;
+  vertical-align: top;
+  padding: 10px 10px;
+}
+
+.main  {
+  width: 50%;
+  border: 1px solid darkblue;
+  background-color: rgb(146,227,227);
+  padding: 100px 30px;
+}
+
+.photo {
+  width: 20%;
+  vertical-align: top;
+  padding-top: 100px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 25px;
+}
+
+p1 {
+  font-style: italic;
+  font-size: 20px;
+}
+
+.core a {
+  font-size: 25px;
+}
+
+li {
+  list-style: none;
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: bolder;
+  border: .5px solid black;
+  height: 50px;
+  width: 230px;
+  line-height: 50px;
+  background-color: #7E837C;
+}
+
+li:hover {
+  background-color: lightgrey;
+}
+
+a:link {
+  color: rgb(146,227,227);
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(146,227,227);
+  text-decoration: none;
+}
+
+.larry, .chuck {
+  display:inline-block;
+}
+
+.larry {
+  width:45%;
+}
+
+.larryPhoto, .chuckPhoto {
+  height: 400px;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chuck {
+  width:45%;
+}
+
+button {
+  height: 20px;
+  width: 100px;
+  vertical-align: middle;
+  margin-right: 50px;
+  background-color: black;
+  color: white;
+}
+
+.counter {
+  height: 20px;
+  width: 100px;
+  vertical-align: middle;
+}

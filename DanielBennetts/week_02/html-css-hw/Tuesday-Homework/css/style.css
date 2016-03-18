@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+header {
+  text-align: center;
+  background-size: cover;
+  background: url("http://blog.hostbaby.com/wp-content/uploads/2013/07/scuffedstatic_dark1400x900.jpg");
+  font-family: 'Amatic SC', sans-serif;
+}
+body {
+  background-color: grey;
+}
+.biography h2 {
+  font-size: 50px;
+  font-family: 'Amatic SC', sans-serif;
+  text-align: center;
+  color: #3F3328;
+}
+.trivia h2 {
+  font-size: 50px;
+  font-family: 'Amatic SC', sans-serif;
+  text-align: center;
+  color: #3F3328;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.imgheader {
+  margin: 70px 0px 0px 0px;
+  width: 250px;
+  height: 365px;
+  border: 8px solid #B8997A;
+  border-radius: 1em;
+}
+.vid {
+  text-align: center;
+  margin: 30px 0px 30px 0px;
+}
+h2 {
+  color: #B8997A;
+  font-size: 40px;
+  margin: 0px;
+}
+h1 {
+  color: #B8997A;
+  font-size: 70px;
+  margin: 0px;
+}
+ul {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 1);
+  padding-left: 0;
+}
+li {
+  display: inline;
+  font-size: 40px;
+  padding: 0px 15px 0px 15px;
+}
+.navlink {
+  color: linen;
+  text-decoration: none;
+}
+.googlemaps {
+  text-align: center;
+  margin: 30px 0px 30px 0px;
+}
+<<<<<<< HEAD
+=======
+.quote {
+  font-size: 25px;
+  font-family: 'Amatic SC', sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 300px;
+}
+>>>>>>> 90d3fc8d7b98d78501f2bd15e567585fec295bc8
