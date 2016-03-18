@@ -3,6 +3,10 @@ require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
 
+get '/' do
+  redirect to '/mathematicians'
+end
+
 get '/mathematicians' do
   @mathematicians = db_query "SELECT * FROM mathematicians"
   erb :mathematicians
