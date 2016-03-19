@@ -42,12 +42,12 @@ get '/mathematicians/:id' do #read one
   erb :mathematicians_show
 end
 
-get '/mathematicians/:id/edit' do #update one - view + controller
+get '/mathematicians/:id/edit' do #update - view + controller
   @mathematician = Mathematician.find params[:id]
   erb :mathematicians_edit
 end
 
-post '/mathematicians/:id' do #update one - model
+post '/mathematicians/:id' do #update - model
   m = Mathematician.find params[:id]
   m.update({
     :name => params["name"],

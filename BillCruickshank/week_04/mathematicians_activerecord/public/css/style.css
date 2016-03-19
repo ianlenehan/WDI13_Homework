@@ -1,31 +1,31 @@
 body {
-  background-color: white;
+  background-color: #CDD9E9;
   font-size: 20px;
 }
 
 header {
-  text-align: center;
-  background-image: url(https://assets.answersingenesis.org/img/cms/content/contentnode/header_image/mathematics.jpg);
+  text-align: right;
+  background-image: url(http://www.twitrcovers.com/wp-content/uploads/2014/02/Mathematics-Trigonometry-l.jpg);
   background-size: cover;
 }
 
 h1 {
   color: white;
   margin: 0px;
-  font-size: 75px;
+  font-size: 70px;
   text-shadow:
-    -3px -3px 0 #000,
-    3px -3px 0 #000,
-    -3px 3px 0 #000,
-    3px 3px 0 #000;
+    -5px -5px 25px #02141E,
+    5px -5px 25px #02141E,
+    -5px 5px 25px #02141E,
+    5px 5px 25px #02141E;
   padding-top: 0.25em;
   padding-bottom: 0.1em;
 }
 
 ul {
     margin: 0;
-    padding: 10px;
-    background: url(http://www.theresasheridan.com/wp-content/uploads/images/old_wood_1_th.jpg);
+    padding: 5px;
+    background: #101414;
     background-size: cover;
     max-height:55px;
 }
@@ -38,8 +38,8 @@ li {
 
 div.container {
   position: relative;
-  margin-top: 50px;
-  text-align: center;
+  text-align: left;
+  padding: 15px 30px;
 }
 
 div.container>p>a {
