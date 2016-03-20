@@ -1,0 +1,66 @@
+@keyframes fade-in-and-out {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+
+body {
+  background-image: url('media/bg.jpg');
+  background-size: 100%;
+}
+
+.container {
+  background-image: url('media/curtains.jpg');
+  background-size: 100%;
+  height: 750px;
+  width: 1300px;
+  position: fixed;
+  left: 0px;
+}
+
+h1 {
+  display: block;
+  font-family: 'Gloria Hallelujah', cursive;
+  color: white;
+  font-size: 48px;
+  margin: 0 auto;
+  position: fixed;
+  left: 550px;
+  top: 300px;
+}
+
+.catDiv {
+  margin-top: 400px
+}
+
+#start {
+  position: absolute;
+  left: 500px;
+  top: 200px;
+}
+
+#mainCat {
+  position: absolute;
+  left: -50px;
+  top: 500x;
+  width: 300px;
+  height: auto;
+}
+
+#bird {
+  position: absolute;
+  left: -30px;
+  width: 150px;
+  height: auto;
+}
+
+#sylvester {
+  display: block;
+  position: fixed;
+  left: 400px;
+}

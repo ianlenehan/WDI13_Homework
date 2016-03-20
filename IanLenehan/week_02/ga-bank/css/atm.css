@@ -1,0 +1,102 @@
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script);
+@import url(http://fonts.googleapis.com/css?family=Ruluko);
+
+body {
+  background: url('../img/bricks.jpg');
+  background-size: cover;
+}
+
+#overlay {
+  background-color: rgba(24, 22, 24, 0.89);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 10;
+  display: block;
+}
+
+#pin h1 {
+  font-family: 'Ruluko', sans-serif;
+  display: inline-block;
+  margin: 30px 100px;
+}
+
+#input-pin {
+  background-color: #E3E3E3;
+  border: 1px solid #676767;
+  font-family: 'Ruluko', sans-serif;
+  font-size: 50px;
+  padding: 25px 0;
+  text-align: center;
+  width: 50%;
+  margin: 50px 120px;
+}
+
+
+#content {
+  margin: 0 auto;
+  text-align: center;
+  width: 700px;
+}
+
+#nav {
+  margin: 50px 0px;
+}
+
+#title {
+  color: #F52F4F;
+  font-family: 'Oleo Script', cursive;
+  font-size: 50px;
+  text-shadow: white 5px 5px 5px;
+}
+
+#pin {
+  margin: 0 105px;
+  background-color: rgba(226, 215, 68, 0.9);
+  position: absolute;
+  height: 300px;
+  width: 500px;
+  border: 1px solid grey;
+  margin: 150px 400px;
+}
+
+#checking {
+  float: left;
+}
+
+#savings {
+  float: right;
+}
+
+.mainCat {
+  position: absolute;
+  left: -530px;
+  top: 100px;
+  width: 500px;
+  height: auto;
+}
+
+.account {
+  background-color: #6C9A74;
+  border: 1px solid #295A33;
+  padding: 10px;
+}
+
+.balance {
+  background-color: #E3E3E3;
+  border: 1px solid #676767;
+  font-family: 'Ruluko', sans-serif;
+  font-size: 50px;
+  padding: 25px 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.zero {
+  background-color: #F52F4F;
+  color: #FFF;
+}
