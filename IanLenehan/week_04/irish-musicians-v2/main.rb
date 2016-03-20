@@ -32,18 +32,28 @@ get '/musicians/new' do
 
 end
 
-post 'musicians' do
+post '/musicians' do
   musician = Musician.new
   musician.name = params[:name]
   musician.genre = params[:genre]
   musician.image = params[:image]
   musician.video = params[:video]
   musician.save
-  redirect "musicians"
+  redirect '/musicians'
 end
 
+get '/musicians/:id' do
+  @musician = Musician.find params[:id]
+  erb :musicians_show
+end
 
+get '/musicians/:id/delete' do
+  musician = Musician.find params[:id]
+  musician.destroy
+  redirect '/musicians'
+end
 
-get '/musician/:id' do
-  @musician = Musician.id
+get '/musicians/:id/edit' do
+  @musician = Musician.find params[:id]
+  erb :musicians_edit
 end
