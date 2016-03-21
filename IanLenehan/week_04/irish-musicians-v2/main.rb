@@ -22,6 +22,8 @@ get '/' do
   erb :home
 end
 
+## MUSICIANS
+
 get '/musicians' do
   @musicians = Musician.all
   erb :musicians_index
@@ -56,4 +58,29 @@ end
 get '/musicians/:id/edit' do
   @musician = Musician.find params[:id]
   erb :musicians_edit
+end
+
+post '/musicians/:id' do
+  musician = Musician.find params[:id]
+  musician.name = params[:name]
+  musician.genre = params[:genre]
+  musician.image = params[:image]
+  musician.video = params[:video]
+  musician.save
+  redirect "/musicians/#{params[:id]}"
+end
+
+## ALBUMS
+
+get '/albums' do
+  @albums = Album.all
+  erb :albums_index
+end
+
+get '/albums/new' do
+  erb :alumbs_new
+end
+
+post '/albums' do
+
 end
