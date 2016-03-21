@@ -1,0 +1,16 @@
+<h3>Pokemon Index</h3>
+
+<% @pokemon_group.each do |p| %>
+
+  <div class="pokemon-container">
+
+    <p>
+      <a href="/pokemon/<%= p["id"] %>">
+        <%= p["name"] %>
+      </a>
+    </p>
+
+
+  </div>
+
+<% end %>

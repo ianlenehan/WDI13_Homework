@@ -1,0 +1,22 @@
+<div class="movie-list-container">
+  <h3>Search results for
+    <%= @movie_title %>
+  </h3>
+
+  <!-- <h3><%= @first_movie_title %></h3>
+  <h3><%= @first_movie_year %></h3>
+  <img src=<%= @first_movie_poster %> /> -->
+
+  <% @data["Search"].each do |element| %>
+
+  <div class="movie-container">
+    <!-- <h3> <%= element["Title"] %> </h3> -->
+
+    <a href="/movies/<%= element["imdbID"] %>">
+      <%= element["Title"] %>
+    </a>
+
+  </div>
+
+  <% end %>
+</div>
