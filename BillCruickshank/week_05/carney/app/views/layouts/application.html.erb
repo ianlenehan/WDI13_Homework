@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Carney</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p>
+    <a href="/eight">Eight Ball</a>
+    <a href="/number">Guess the number</a>
+    <a href="/rps">Rock, Paper, Scissors</a>
+  </p>
+
+<%= yield %>
+
+</body>
+</html>
