@@ -15,12 +15,12 @@ get '/' do
   redirect to "/mathematicians"
 end
 
-get '/mathematicians' do #read all
+get '/mathematicians' do #read all - view
   @mathematicians = Mathematician.all
   erb :mathematicians_index
 end
 
-get '/mathematicians/new' do #create one - view + controller
+get '/mathematicians/new' do #create one - controller
   erb :mathematicians_new
 end
 
@@ -37,12 +37,12 @@ post '/mathematicians' do #create one - model
   redirect to "mathematicians/#{ m.id }"
 end
 
-get '/mathematicians/:id' do #read one
+get '/mathematicians/:id' do #read one - view
   @mathematician = Mathematician.find params[:id]
   erb :mathematicians_show
 end
 
-get '/mathematicians/:id/edit' do #update - view + controller
+get '/mathematicians/:id/edit' do #update - controller
   @mathematician = Mathematician.find params[:id]
   erb :mathematicians_edit
 end
@@ -62,7 +62,7 @@ post '/mathematicians/:id' do #update - model
 end
 
 get '/mathematicians/:id/delete' do #delete, but what should this look like? not a get...
-  m = Mathematician.find params[:id]
+  m = Mathematician.find params[:id] #but its model either way.
   m.destroy
   redirect to '/mathematicians'
 end
