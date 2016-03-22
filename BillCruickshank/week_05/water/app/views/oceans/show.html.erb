@@ -1,0 +1,8 @@
+<h1><%= @ocean.name %></h1>
+
+<p>Area: <%= number_with_delimiter @ocean.area %> km<sup>2</sup></p>
+<p>Deepest Depth: <%= number_with_delimiter @ocean.deepest %> metres</p>
+<p>Percentage of Earths Water: <%= number_to_percentage @ocean.percentage %></p>
+
+<%= link_to 'Update Ocean', ocean_edit_path(@ocean.id) %>
+<%= button_to 'Destroy Ocean', ocean_destroy_path(@ocean.id) %>

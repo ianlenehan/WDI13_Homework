@@ -16,9 +16,9 @@ flowerPrimes = {
     y : 300
   },
 
-  dilation : 5,
+  dilation : 10,
 
-  xyCenter : function (n){
+  floretCenter : function (n){
     var radius = Math.sqrt(n);
     var angle = n * 4 * Math.PI /( 3+ Math.sqrt(5));
     return [radius * Math.cos(angle) * this.dilation + this.origin.x,
@@ -27,9 +27,15 @@ flowerPrimes = {
 
   florets : [],
 
+  setColorFlorets : function (color) {
+    for (var i = 0; i < this.florets.length; i++) {
+      this.florets[i].color = color;
+    }
+  },
+
   makeFlorets : function (max) {
     for(var i= 0; i <= max; i++) {
-      var coords = this.xyCenter(i);
+      var coords = this.floretCenter(i);
       this.florets.push({
         index : i,
         x : coords[0],
@@ -40,16 +46,56 @@ flowerPrimes = {
     this.florets[0].r = 0;
   },
 
-  drawFlorets : function () {
-    for (var i = 0; i < this.florets.length; i++) {
+  drawFlorets : function (max) {
+    if (max === undefined) {
+      max = this.florets.length;
+    }
+    for (var i = 0; i < max; i++) {
       this.drawCircle(this.florets[i]);
     }
+  },
+
+  drawFloretsRange : function (min, max) {
+    console.log(min, max)
+    for (var i = Math.ceil(min); i < max; i++) {
+      this.drawCircle(this.florets[i]);
+    }
+  },
+
+  index : 0,
+
+  timeScaledToRange : function (time) {
+    return time/1000;
+  },
+
+  drawFloretsSlow : function (time) {
+    if (!flowerPrimes.start) {
+      flowerPrimes.start = time;
+      flowerPrimes.last_rel_time = 0;
+    }
+    rel_range = flowerPrimes.timeScaledToRange(time - flowerPrimes.start);
+    if (rel_range > flowerPrimes.florets.length -1){
+      cancelAnimationFrame(id);
+    }
+    flowerPrimes.drawFloretsRange(flowerPrimes.last_rel_range, rel_range);
+    flowerPrimes.last_rel_range = rel_range;
+    var id = requestAnimationFrame(flowerPrimes.drawFloretsSlow);
   }
+};
+
+var fib = function(n) {
+  numbers = [1,1];
+  while(numbers[0] < n){
+    numbers.unshift(numbers[0] + numbers[1]);
+  }
+  console.log(numbers);
 };
 
 $(document).ready( function () {
   canvas = document.getElementsByTagName("canvas")[0];
   context = canvas.getContext('2d');
-  flowerPrimes.makeFlorets(2000);
-  flowerPrimes.drawFlorets();
+  // flowerPrimes.makeFlorets(6765);
+  // flowerPrimes.drawFlorets();
+  // flowerPrimes.setColorFlorets('red');
+  // var id =  requestAnimationFrame(flowerPrimes.drawFloretsSlow);
 });

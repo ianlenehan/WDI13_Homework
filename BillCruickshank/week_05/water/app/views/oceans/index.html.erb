@@ -1,0 +1,7 @@
+<h1>Big Lumps of Water That Want to Kill You</h1>
+
+<% @oceans.each do |o| %>
+
+<p><a href="<%= ocean_path(o.id) %>"><%= o.name %></a></p>
+
+<% end %>

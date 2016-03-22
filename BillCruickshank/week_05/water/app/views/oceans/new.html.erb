@@ -1,0 +1,16 @@
+<h2>New Ocean</h2>
+<form action="<%= oceans_path %>" method="POST">
+  <label>Name: </label>
+  <input type="text" name="name">
+  <br>
+  <label>Area (km<sup>2</sup>): </label>
+  <input type="number" name="area">
+  <br>
+  <label>Deepest Depth (m): </label>
+  <input type="number" name="deepest">
+  <br>
+  <label>Percentage of Earths Water: </label>
+  <input type="number" name="percentage">
+  <br>
+  <input type="submit" value="Create Ocean">
+</form>
