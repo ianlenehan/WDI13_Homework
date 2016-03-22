@@ -1,8 +1,8 @@
 body{
-  background-image: url("http://westsidetoday.com/wp-content/uploads/2014/12/movie-strip.jpg");
+  background: #22264b;
 }
 .container{
-  color: hotpink;
+  color: #b56969;
   font-size: 40px;
   margin: 0 auto;
   text-align: center;
