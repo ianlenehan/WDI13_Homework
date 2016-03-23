@@ -1,0 +1,91 @@
+*, html {
+  font-family: "Courier", monospace, sans-serif;
+}
+body {
+  background-image: url('../img/film.jpg');
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  text-align: center;
+  font-size: 2.8em;
+}
+
+h3 {
+  text-align: center;
+}
+h1 a:hover {
+  text-decoration: none;
+}
+
+.container {
+  margin: 40px auto;
+  max-width: 700px;
+  border: 2px solid #000;
+  border-radius: 1em;
+  padding: 2em;
+  background: #fff;
+}
+
+/* FORM */
+.form-container {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form div {
+  margin: 20px 0;
+}
+
+/* MOVE LIST */
+.movie-list-container {
+  text-align: center;
+}
+
+.movie-container {
+  margin: 10px 0;
+}
+
+/* MOVIE SINGLE */
+.movie-single-container {
+  text-align: center;
+}
+
+.home {
+  padding-top: 20px;
+}
+/* ELEMENTS */
+input,
+button {
+  font-size: 1em;
+  padding: 10px;
+}
+
+input[type="submit"] {
+  border: 1px solid #000;
+  background: white;
+  border-radius: 1em;
+  cursor: pointer;
+
+}
+
+input:focus {
+  outline-width: 3px;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid #000;
+  background: #fff;
+  border-radius: 1em;
+  cursor: pointer;
+}

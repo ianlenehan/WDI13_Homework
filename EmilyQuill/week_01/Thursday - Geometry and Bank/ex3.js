@@ -81,8 +81,18 @@ var bank = {
       return "Cannot transfer. Insufficient Funds."
     } else {
       // checkNegative called -- transaction would not result in negative balance
+<<<<<<< HEAD
       bank.accounts[senderIndex].balance -= value; // transfer value
       bank.accounts[recipientIndex].balance += value;
+=======
+<<<<<<< HEAD
+      bank.accounts[senderIndex].balance -= value; // transfer value
+      bank.accounts[recipientIndex].balance += value;
+=======
+      bank.accounts[senderIndex].withdraw(value);// transfer value
+      bank.accounts[recipientIndex].deposit(value);
+>>>>>>> 90d3fc8d7b98d78501f2bd15e567585fec295bc8
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
       return "Transfer Completed."
     }
   }

@@ -1,0 +1,103 @@
+#navbar {
+	background-color: black;
+	color: lightgrey;
+}
+
+#nav_wrapper {
+	width: 100% auto;
+	height: 50px;
+	text-align: left center;
+	padding: 30px 0 0 50px;
+}
+
+#navbar ul {
+    height: auto;
+    padding: 8px 0px;
+    margin: 0px;
+}
+
+#navbar li {
+	display: inline;
+	padding: 26px 20px 26px 20px;
+}
+
+#navbar li:hover {
+	background-image: linear-gradient(0deg, rgba(166, 255, 245, 0), rgba(166, 255, 245, 0.2));
+	color: lightblue;
+	border-top: solid 3px;
+	border-color: lightblue;
+	margin: 0;
+}
+
+#navbar ul li a:hover {
+	color: #FFF;
+}
+
+#navbar a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.header_div {
+	display: block;
+	margin: auto;
+	padding-left: 70px;
+	width: 90% auto;
+}
+
+#logo_div {
+	display: inline-block;
+	width: 50%;
+	margin: auto;
+}
+
+#social_media {
+	display: inline-block;
+}
+
+#logo_image {
+  display: block;
+  background-image: url('../images/logo.png');
+  width: 291px;
+  height: 54px;
+  text-indent: -9999px;
+  margin-top: 10px;
+}
+
+#icons {
+  display: block;
+  background-image: url('../images/socialNav.png');
+  width: 291px;
+  height: 54px;
+  text-indent: -9999px;
+  margin: 10px auto;
+	vertical-align: top;
+}
+
+.photobanner {
+	display: block;
+	margin-bottom: -4px;
+	padding: 0 0 0 50px;
+}
+
+#bottom_half {
+	background-image: url('../images/bg_body.jpg');
+	background-repeat: repeat;
+	margin-top: -150px;
+	height: 500px;
+}
+
+#quote_box {
+	padding: 150px 0 0 50px;
+	margin: 0 auto;
+
+}
+#quote_text {
+	display: inline-block;
+	width: 100px;
+}
+
+#quote_button {
+	display: inline-block;
+	width: 30%;
+}

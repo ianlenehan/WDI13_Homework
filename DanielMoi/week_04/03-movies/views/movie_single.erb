@@ -1,0 +1,35 @@
+<div class="movie-single-container">
+  <h2>
+    <%= @data["Title"] %>
+  </h1>
+
+  <img src=<%= @data["Poster"] %>/>
+  <p>
+    <%= @data["Year"] %>
+  </p>
+
+  <p>
+    Genre:
+    <%= @data["Genre"] %>
+  </p>
+  <p>
+    Runtime:
+    <%= @data["Runtime"] %>
+  </p>
+  <p>
+    Released:
+    <%= @data["Released"] %>
+  </p>
+  <p>
+    IMDB Rating:
+    <%= @data["imdbRaing"] %>
+  </p>
+
+  <p>
+    Plot:
+    <%= @data["Plot"] %></p>
+
+  <div class="home">
+    <a class="button" href="/">Home</a>
+  </div>
+</div>

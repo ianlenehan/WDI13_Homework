@@ -22,7 +22,11 @@ var isSquare = function(rectangle) {
     return true;
   } else {
     return false;
+<<<<<<< HEAD
   };
+=======
+  }
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
 };
 
 var area = function(r) {
@@ -104,12 +108,20 @@ var isObtuse = function(t) {
     thirdSide = t.sideB;
   } else {
     return false;
+<<<<<<< HEAD
   };
+=======
+  }
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
 
   if ((secondSide * secondSide) + (thirdSide * thirdSide) < (longestSide * longestSide)) {
     return true;
   } else {
     return false;
+<<<<<<< HEAD
   };
+=======
+  }
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
 
 };

@@ -1,0 +1,39 @@
+@keyframes fade-in-and-out {
+  0% {
+    /*opacity: 0;*/
+    transform: rotate(0deg);
+  }
+  100% {
+    /*opacity: 1;*/
+    transform: rotate(360deg);
+  }
+}
+
+h1 {
+  -webkit-animation: fade-in-and-out 2s infinite linear;
+  animation: fade-in-and-out 2s infinite linear;
+}
+
+body {
+  background: hotpink;
+}
+
+.container {
+  background: white;
+  width: 80%;
+  margin: 80px auto;
+  padding: 10px;
+  border: 1px solid black;
+  box-shadow: 0 0 20px 20px gainsboro;
+}
+
+h1 {
+  text-shadow: 5px 5px 10px palevioletred;
+  font-size: 50px;
+  transition: all 1s linear;
+}
+
+h1:hover {
+  color: red;
+  cursor: pointer;
+}

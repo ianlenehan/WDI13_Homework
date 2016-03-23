@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700);
+
+body{
+  font-family: 'VT323', sans-serif;
+  background-color:#e8ff00;
+  font-size: 16px;
+}
+
+.container{
+  width: 960px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+nav{
+  width: 900px;
+  font-family: 'VT323', sans-serif;
+  text-align: center;
+  font-size: 2.5em;
+  margin: 0 auto;
+  list-style-type: none;
+}
+nav li{
+  color: #e8ff00;
+  text-shadow: 3px 3px 3px #000;
+  display: inline-block;
+  padding: 1em;
+  padding-bottom: 0
+}
+h1{
+  font-size: 5em;
+  text-align: center;
+  padding: 0;
+}
+
+h2{
+  font-size: 1.5em;
+  text-align: center;
+}
+
+p{
+  font-family: 'Ubuntu Mono', sans-serif;
+}
+.virtue{
+  font-size: 1.3em;
+  width: 65%;
+  padding-left: 2em;
+  display: inline-block;
+}
+
+.impatience{
+  width: 850px;
+}
+
+.hero{
+  margin: 0 auto;
+  vertical-align: top;
+  width: 25%;
+  display: inline-block;
+}
+
+.gallery img{
+  padding-top: 2em;
+  width: 25%;
+
+}
+
+.p1, .p2, .p3, .p4{
+  padding-left: 100px;
+  width: 30%;
+  display: inline-block;
+
+}
+
+.p1 img{
+  display: inline-block;
+  border-radius: 100%;
+  width: 200px;
+}
+.p2 img{
+  border-radius: 100%;
+  width: 200px;
+}
+.p3 img{
+  border-radius: 100%;
+  width: 200px;
+}
+
+.p4 img{
+  border-radius: 100%;
+  width: 200px;
+}
+.p1, .p2, .p3, .p4 p{
+  color: black;
+  font-size: 1.5em;
+  text-align: center;
+}
+.p4 a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+}
+
+.p4 li{
+    list-style-type: none;
+}

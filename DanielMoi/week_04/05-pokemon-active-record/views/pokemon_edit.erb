@@ -1,0 +1,33 @@
+<h3>Edit a pokemon</h3>
+
+<div class="form-container">
+  <form class="form" action="/pokemon/<%= @pokemon_single.id %>" method="post">
+
+  <div class="form-section">
+    <label>Name: </label>
+    <input type="text" name="name" value="<%= @pokemon_single.name %>">
+  </div>
+
+  <div class="form-section">
+    <label>Generation: </label>
+    <input type="text" name="generation" value="<%= @pokemon_single.generation %>">
+  </div>
+
+  <div class="form-section">
+    <label>Type: </label>
+    <input type="text" name="type" value="<%= @pokemon_single.pokemontype %>">
+  </div>
+
+  <div class="form-section">
+    <label>Image: </label>
+    <input type="url" name="image" value="<%= @pokemon_single.image %>">
+  </div>
+
+  <input class="button" type="submit" value="Edit Pokemon">
+
+
+
+  </form>
+
+
+</div>

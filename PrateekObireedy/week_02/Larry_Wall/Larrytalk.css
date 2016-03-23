@@ -1,0 +1,43 @@
+body{
+  margin:0 !important;
+}
+
+header{
+  height: 100%;
+  width: 100%;
+  border: 2px solid #DEFEA6;
+  background-color: #030303;
+
+
+
+}
+a{
+  color: #E0F6BB
+}
+.nav{
+  color: #E0F6BB;
+  list-style: none;
+  text-align: center;
+  font-weight: bold;
+}
+li{
+  text-align: center;
+  display: inline-block;
+  padding: 0 75px;
+}
+body{
+  background-color: #AEC090;
+}
+h1{
+  text-align: center;
+}
+#container{
+  border: 2px solid black;
+  width: 855px;
+  text-align: center;
+  margin: 0 auto;
+}
+#vid{
+  margin-bottom: 25px;
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+body {
+  background-image: url("http://orig07.deviantart.net/a68d/f/2011/262/1/4/kombat_tomb___empty_version_by_molim-d4ablz9.jpg");
+  background-size: cover;
+  margin: 0 auto;
+}
+
+.cat {
+ -webkit-transform: scaleX(-1);
+ transform: scaleX(-1);
+ width: 600px;
+}

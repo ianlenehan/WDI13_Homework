@@ -1,0 +1,56 @@
+.box {
+  width:200px;
+  height:200px;
+  border:1px solid black;
+  text-align: center;
+  /*margin:0 auto; */
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
+.fixed {
+  position:fixed;
+  top: 200px;
+  right: 400px;
+  opacity:0.6;
+  background-color: turquoise;
+}
+
+.example {
+  position: relative;
+  border: 2px dotted red;
+}
+/* Z index works for fixed and absolute objects */
+/* anything not static */
+
+.abs1 {
+  background-color: #345544;
+  position:absolute;;
+  top: 10px;
+ left: 10px;
+}
+.abs2 {
+    background-color: #209090;
+  position:absolute;;
+  top: 20px;
+  left:20px;
+  z-index:1;
+}
+.abs3 {
+    background-color: #881023;
+  position:absolute;;
+  top: 30px;
+  left:30px;
+  z-index:2;
+}
+.abs4 {
+    background-color: #449912;
+  position:absolute;;
+  top: 40px;
+  left:40px;
+}

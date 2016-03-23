@@ -1,0 +1,8 @@
+<h1>Search Results</h1>
+<h3>Your search results are below</h3>
+
+<p>
+  <% @result["Search"].each do |i| %>
+  <p><a href="/details/<%=@imdb = i["imdbID"]%>"><%= i["Title"] %></a></p>
+  <% end %>
+</p>
