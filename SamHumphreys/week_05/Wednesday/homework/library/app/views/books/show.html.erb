@@ -1,8 +1,10 @@
 <h1><%= @book.title %></h1>
 
-<%= image_tag(@book.image, :class => 'feature') %>
+<div class="left">
+  <%= image_tag(@book.image, :class => 'feature') %>
+</div>
 
-
+<div class="right">
   <p><%= @book.title %></p>
   <% if @book.author != nil %>
     <p>Author: <%= link_to(@book.author.name, @book.author ) %></p>
@@ -19,6 +21,7 @@
   <% if @book.isbn != nil %>
     <p>ISBN: <%= @book.isbn %></p>
   <% end %>
+</div>
 
 <p>
   <%= link_to 'Edit Book Details', edit_book_path(@book.id) %>
