@@ -1,5 +1,5 @@
-flowerPrimes = {
-  drawCircle : function (object) {
+primes = {
+  drawCircle : function (object) { //draw
     var x = (object.x !== undefined) ? object.x : 0;
     var y = (object.y !== undefined) ? object.y : 0;
     var r = (object.r !== undefined) ? object.r : this.dilation*0.5;
@@ -11,14 +11,14 @@ flowerPrimes = {
     context.lineWidth = 0;
   },
 
-  origin : {
+  origin : {  //draw
     x : 300,
     y : 300
   },
 
-  dilation : 10,
+  dilation : 10,  //draw
 
-  floretCenter : function (n){
+  floretCenter : function (n){  //draw
     var radius = Math.sqrt(n);
     var angle = n * 4 * Math.PI /( 3+ Math.sqrt(5));
     return [radius * Math.cos(angle) * this.dilation + this.origin.x,
@@ -27,23 +27,10 @@ flowerPrimes = {
 
   florets : [],
 
-  setColorFlorets : function (color) {
+  setColorFlorets : function (color) { // dump it later
     for (var i = 0; i < this.florets.length; i++) {
       this.florets[i].color = color;
     }
-  },
-
-  makeFlorets : function (max) {
-    for(var i= 0; i <= max; i++) {
-      var coords = this.floretCenter(i);
-      this.florets.push({
-        index : i,
-        x : coords[0],
-        y : coords[1],
-        color : 'rebeccapurple'
-      });
-    }
-    this.florets[0].r = 0;
   },
 
   drawFlorets : function (max) {
@@ -56,7 +43,6 @@ flowerPrimes = {
   },
 
   drawFloretsRange : function (min, max) {
-    console.log(min, max)
     for (var i = Math.ceil(min); i < max; i++) {
       this.drawCircle(this.florets[i]);
     }
@@ -82,6 +68,20 @@ flowerPrimes = {
     var id = requestAnimationFrame(flowerPrimes.drawFloretsSlow);
   }
 };
+
+primes.makeFlorets = function (max) {
+  for(var i= 0; i <= max; i++) {
+    var coords = this.floretCenter(i);
+    this.florets.push({
+      index : i,
+      x : coords[0],
+      y : coords[1],
+      color : 'rebeccapurple'
+    });
+  }
+  this.florets[0].r = 0;
+};
+
 
 var fib = function(n) {
   numbers = [1,1];

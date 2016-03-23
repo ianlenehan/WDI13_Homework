@@ -1,0 +1,20 @@
+<%= form_for @author do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :date_of_birth, 'Date of Birth (Y/M/D)' %>
+    <%= f.text_field :date_of_birth %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :genre %>
+    <%= f.text_field :genre %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </fieldset>
+
+  <%= f.submit %>
+<% end %>
