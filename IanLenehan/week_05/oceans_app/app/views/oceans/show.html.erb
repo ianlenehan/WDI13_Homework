@@ -7,6 +7,7 @@
 <% if @ocean.mean %>
 <p>Mean Depth: <%= number_with_delimiter @ocean.mean, delimiter: ',' %>m</p>
 <% end %>
+
 <p><img src="<%= @ocean.image %>" alt=""></p>
 <p><%= link_to 'Edit Ocean', ocean_edit_path(@ocean.id) %></p>
 <%= button_to 'Destroy Ocean', ocean_delete_path(@ocean.id) %>
