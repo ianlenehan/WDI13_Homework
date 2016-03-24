@@ -3,7 +3,7 @@
 
 <% @books.each do |b| %>
   <p>
-    <% if b.cover == "" %>
+    <% if not b.cover.present %>
       <%= link_to(b.title, b) %>
     <% else %>
       <%= link_to(image_tag(b.cover), b) %>

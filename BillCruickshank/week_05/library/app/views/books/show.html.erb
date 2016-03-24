@@ -1,7 +1,9 @@
 <h1><%= @book.title %></h1>
-<%= image_tag(@book.cover) %>
+<% if @book.cover.present %>
+  <%= image_tag(@book.cover) %>
+<% end %>
 
-<% if @book.author and @book.author != "" %>
+<% if @book.author.present %>
   <p><%= link_to(@book.author.name, @book.author) %></p>
 <% end %>
 

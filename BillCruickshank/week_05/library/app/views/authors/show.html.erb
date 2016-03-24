@@ -1,13 +1,13 @@
 <h1><%= @author.name %></h1>
 
-<% if @author.image and @author.image != "" %>
+<% if @author.image.present %>
   <%= image_tag(@author.image) %>
 <% end %>
 
 <p>Date of Birth: <%= @author.date_of_birth.strftime "%A %e %B, %Y" unless @author.date_of_birth.nil?%> </p>
 <p>Genre: <%= @author.genre %></p>
 
-<h4>Books</h4>
+<h4><%= pluralize(@author.books.size, 'Book').split[1] %></h4>
 <ul>
   <% @author.books.each do |b| %>
     <li><%=link_to(b.title, b)  %></li>
