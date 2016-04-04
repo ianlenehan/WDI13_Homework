@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
 
         var htmlToInsertList = "<ul>";
         for(var i=0; i < info.Search.length; i++){
-          htmlToInsertList += "<li id="+i+">"+info.Search[i].Title+"</li>";
+          htmlToInsertList += "<li>"+info.Search[i].Title+"</li>";
         }
         htmlToInsertList += "</ul>";
 
@@ -38,11 +38,12 @@ window.addEventListener('load', function () {
         titles = document.getElementsByTagName('li');
 
         for (i=0; i < info.Search.length; i++){
-          titles[i].onclick = function () {
-            var index = parseInt(this.id);
-            var htmlToInsertImg = "<img src='"+info.Search[index].Poster+"'>";
-            poster.innerHTML = htmlToInsertImg;
-          };
+          (function (index) {
+            titles[i].onclick = function () {
+              var htmlToInsertImg = "<img src='"+info.Search[index].Poster+"'>";
+              poster.innerHTML = htmlToInsertImg;
+            };
+          })(i);
         }
       }
     };
