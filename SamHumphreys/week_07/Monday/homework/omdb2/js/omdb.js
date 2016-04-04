@@ -58,6 +58,10 @@ var showPicture = function() {
   var container = document.getElementsByClassName('container')[0];
   var image = document.createElement('p');
   image.className = 'Poster'
-  image.innerHTML = '<img src="' + Poster + '">';
+  if (Poster != 'N/A') {
+    image.innerHTML = '<img src="' + Poster + '">';
+  } else {
+     image.innerHTML = '<img src="https://img1.etsystatic.com/059/0/10858326/il_570xN.748219085_fsnk.jpg">'
+  }
   container.appendChild(image);
 };
