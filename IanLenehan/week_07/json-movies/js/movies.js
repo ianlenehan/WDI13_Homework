@@ -7,12 +7,15 @@ $(document).ready(function() {
   $('#button').on('click', function() {
     title = $('#search').val();
     omdb_url = 'http://omdbapi.com?s=' + title;
+    var content = $('#content');
+    content.text('');
+    $('#image').text('');
 
     request.onreadystatechange = function() {
       if (request.readyState !== 4) {
         return;
       }
-      var content = $('#content');
+
 
       var info = JSON.parse(request.responseText);
       for (var i = 0; i < 10; i++) {
@@ -34,8 +37,10 @@ $(document).ready(function() {
       }
       var image = $('#image');
 
+
       var info = JSON.parse(request.responseText);
-      image.html("<img src=" + info.Poster + ">" + "<p>" + info.Plot + "</p>")
+      image.html("<img src=" + info.Poster + ">" + "<p>" + info.Plot + "</p>");
+
     }
 
     request.open('GET', new_url);
