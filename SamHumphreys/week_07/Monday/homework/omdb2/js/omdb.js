@@ -1,5 +1,4 @@
 var request = new XMLHttpRequest();
-var imdbID;
 
 request.onreadystatechange = function() {
   if (request.readyState !== 4) {
@@ -19,19 +18,16 @@ request.onreadystatechange = function() {
   container.appendChild(list);
 
 
-  response = JSON.parse(request.responseText);
-  results = response.Search;
+  results = JSON.parse(request.responseText).Search;
 
   for (var i = 0; i<results.length; i++) {
-    thisMovie = results[i]
     var listItem = document.createElement('li');
-    listItem.className = thisMovie.Poster;
-    listItem.innerHTML = '<p>' + thisMovie.Title + '</p>';
+    listItem.className = results[i].Poster;
+    listItem.innerHTML = '<p>' + results[i].Title + '</p>';
     listItem.addEventListener('click', function() {
       Poster = this.className;
       showPicture();
     });
-
     var list = document.getElementsByClassName('list')[0];
     list.appendChild(listItem);
   };
