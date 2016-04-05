@@ -46,5 +46,5 @@ $(document).ready(function () {
     };
   }
 
-  $('button').on('click', getMovie);
+  $('button').on('submit', getMovie);
 });
