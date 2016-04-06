@@ -9,7 +9,7 @@ $(document).ready(function(){
          console.log(data);
          k = data
         var $h2 = ("<h2>" + "The weather today: " + data.weather[0].description);
-        var $h3 = ("<h3>" + "The temperature today: " + data.main.temp)
+        var $h3 = ("<h3>" + "The temperature today: " + (data.main.temp - 273))
         $("#result").html($h2);
         $("#result1").html($h3);
       }
