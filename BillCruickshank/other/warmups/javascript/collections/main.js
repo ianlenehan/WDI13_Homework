@@ -1,12 +1,5 @@
 
 var collections = {
-  myArrayMap: function(array, callback) {
-    var returnArray = [];
-    for (var i = 0; i < array.length; i++) {
-      returnArray.push(callback(array[i]));
-    }
-    return returnArray;
-  },
 
   functions: [
     {
@@ -54,6 +47,14 @@ var collections = {
     return newObject;
   },
 
+  myArrayMap: function(array, callback) {
+    var returnArray = [];
+    for (var i = 0; i < array.length; i++) {
+      returnArray.push(callback(array[i]));
+    }
+    return returnArray;
+  },
+
   datafier: function(array, boxRows) {
     if(boxRows){
       var returnArray = [];
@@ -73,7 +74,6 @@ window.addEventListener('load', function () {
     .attr("width", 800)
     .attr("height", 800);
 
-
   var circles = svgSelection.selectAll('circle')
     .data(collections.datafier([1,2,3,4,5], true))
     .enter()
@@ -81,8 +81,8 @@ window.addEventListener('load', function () {
 
   var circleAttrs = circles
     .attr('cx', function(d){return 30+ d.cube*2;})
-    .attr('cy', function(d){return d.square*10;})
-    .attr('r', function(d){return d.squareroot*10;})
+    .attr('cy', function(d){return d.original*10;})
+    .attr('r', function(d){return d.square;})
     .style('fill', function(d){
       if (d.isEven) {
         return "red";
