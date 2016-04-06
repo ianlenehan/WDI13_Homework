@@ -25,7 +25,7 @@ request.onreadystatechange = function() {
     listItem.className = results[i].Poster;
     listItem.innerHTML = '<p>' + results[i].Title + '</p>';
     listItem.addEventListener('click', function() {
-      Poster = this.className;
+      posterUrl = this.className;
       showPicture();
     });
     var list = document.getElementsByClassName('list')[0];
@@ -54,8 +54,8 @@ var showPicture = function() {
   var container = document.getElementsByClassName('container')[0];
   var image = document.createElement('p');
   image.className = 'Poster'
-  if (Poster != 'N/A') {
-    image.innerHTML = '<img src="' + Poster + '">';
+  if (posterUrl !== 'N/A') {
+    image.innerHTML = '<img src="' + posterUrl + '">';
   } else {
      image.innerHTML = '<img src="https://img1.etsystatic.com/059/0/10858326/il_570xN.748219085_fsnk.jpg">'
   }

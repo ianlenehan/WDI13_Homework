@@ -76,3 +76,5 @@ var doStuff = {
     console.log('Is it even? ' + doStuff.checkIfEven(array));
   }
 };
+
+doStuff.runIt(items.inputs);
