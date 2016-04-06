@@ -9,9 +9,6 @@ var result = function() {
       return;
     }
 
-
-
-
     //.value
 
     var poster = document.getElementById("poster");
