@@ -23,6 +23,8 @@
   img{
     border: solid white 2px;
     border-radius: 2px;
+    height: 300px;
+    width: 300px;
   }
   h1{
     font-size: 40px;

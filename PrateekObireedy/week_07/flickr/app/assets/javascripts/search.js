@@ -2,6 +2,7 @@
 var maxPages;
 var maxPage;
 var load = false;
+var endResults = false;
 $(document).ready(function(){
 
   var current_page = 1;
@@ -13,9 +14,10 @@ $(document).ready(function(){
     api_key: "2f5ac274ecfac5a455f38745704ad084",
     text: term,
     format: "json",
-    page: current_page
+    page: current_page++
 
   }).done(function(data){
+
     console.log(data);
     maxPage = data.photos.page;
     maxPages = data.photos.pages;
@@ -59,7 +61,7 @@ $("#search").on("submit", function(e){
 
 
   $("#results").empty();
-
+  current_page = 1;
   searchFlickr(query);
 
   });
@@ -74,7 +76,6 @@ var loadMorePhotos = function(){
   if (pixelsFromBottom < 300 && current_page !== maxPages){
 
     var query = $("#query").val();
-    current_page+=1;
     showPageNum();
     searchFlickr(query);
     console.log("search flickr more here");
