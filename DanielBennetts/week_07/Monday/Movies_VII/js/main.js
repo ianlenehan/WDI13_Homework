@@ -48,15 +48,15 @@
 
 $(document).ready(function(){
 
-  $('#movie-lookup').on('submit', function (event) {
+  $('#game-lookup').on('submit', function (event) {
 
     event.preventDefault();
 
-    var movieTitle = $('#movie-title').val();
-    var movieURL = 'http://omdbapi.com/?t=' + movieTitle;
+    var gameTitle = $('#game-title').val();
+    var gameURL = 'https://www.igdb.com/api/v1/games/' + gameTitle + '?token=kEL_yuL6Y1Dsy8qmqqeEwF1zjGGw99nWkE21hlL4edU'
 
-    $.ajax(movieURL).done(function (data) {
-      var $image = $('<img>').attr('src', data.Poster);
+    $.ajax(gameURL).done(function (data) {
+      var $image = $('<img>').attr('src', data.Cover);
       $('#result').html($image);
       });
     });
@@ -76,4 +76,3 @@ $(document).ready(function(){
     // request.open('GET', movieURL)
     // request.send();
   });
-});

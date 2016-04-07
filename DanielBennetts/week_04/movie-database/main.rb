@@ -16,6 +16,8 @@ get "/movies" do
   @released_result = @movie['Released']
   @runtime_result = @movie['Runtime']
   @director_result = @movie['Director']
+  @actors_result = @movie['Actors']
+  @plot_result = @movie['Plot']
   @result = HTTParty.get "http://omdbapi.com/?s=#{@movie_title}"
   @movie_array = @result['Search']
   erb :results
