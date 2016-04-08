@@ -1,16 +1,21 @@
 class SecretHandshake
 
     attr_reader :digits
-    def initialize(decimal)
-        # Because we want to capture any invalid number, we'll wrap our variable declaration in a "begin-end" block with a "rescue" clause to capture those exceptions.
-        begin
-            # We want to take a FixNum entered by the user and convert it to a string that is a binary representation of the FixNum by calling the to_s method and passing in 2 as the base (eg "binary").
-            # We then want to reverse those characters, since we/binary will be working from right to left.
-            # We then want to split the string into an array and 'collect' each element, passing them to the to_i method to convert them to integers.
-            @digits = decimal.to_s(2).reverse.chars.collect(&:to_i)
-        rescue ArgumentError
-            # Ruby will raise an exception (ArgumentError) if we try to pass a string into the to_s function with an argument (eg 'to_s(2)'). We want to 'rescue' the program from that exception and set @digits to 0.
-            @digits = 0
+    
+    def initialize(num, type)
+        if type === "decimal"
+        # Because we want to be able to handle an invalid number, we'll wrap our variable declaration in a "begin-end" block with a "rescue" clause to capture those exceptions.
+            begin
+                # We want to take a FixNum entered by the user and convert it to a string that is a binary representation of the FixNum by calling the to_s method and passing in 2 as the base (eg "binary").
+                # We then want to reverse those characters, since we/binary will be working from right to left.
+                # We then want to split the string into an array and 'collect' each element, passing them to the to_i method to convert them to integers.
+                @digits = num.to_s(2).reverse.chars.collect(&:to_i)
+            rescue ArgumentError
+                # Ruby will raise an exception (ArgumentError) if we try to pass a string into the to_s function with an argument (eg 'to_s(2)'). We want to 'rescue' the program from that exception and set @digits to 0.
+                @digits = 0
+            end
+        else #eg, if type === "binary"
+            @digits = num.reverse.chars.collect(&:to_i)
         end
     end
 
@@ -40,8 +45,20 @@ class SecretHandshake
     end
 end
 
+# Let's extend the functionality to accept both base-2 and base-10 numbers
 
-puts "Enter a number to secretify"
-number = gets.to_i
-handshake = SecretHandshake.new(number)
+puts "Do you want to enter a (b)inary or a (d)ecimal? \n(b||d)"
+selection = gets.chomp
+
+if selection == "d"
+    puts "Enter the decimal"
+    number = gets.to_i
+    type = "decimal"
+elsif selection == "b"
+    puts "Enter the binary"
+    number = gets.chomp
+    type = "binary"
+end
+
+handshake = SecretHandshake.new(number, type)
 puts handshake.commands
