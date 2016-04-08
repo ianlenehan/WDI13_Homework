@@ -47,8 +47,7 @@ $(document).ready(function () {
       $('svg').text("");
       svgCont.append('path')
         .attr('d', lineFunction(points))
-        .attr('stroke', 'blue')
-        .attr('stroke-width', 2)
+        .attr('stroke', 'none')
         .attr('fill', 'green');
     } else if (points.length === 4) {
       points = [];

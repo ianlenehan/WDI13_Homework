@@ -6,10 +6,10 @@ var flickrQueryObject = {
   page: 0
 };
 
-var complete = true;
+var photoShowComplete = true;
 
 var searchFlickr = function () {
-  flickrQueryObject.page += 1;
+  flickrQueryObject.page++;
   var flickrURL = 'https://api.flickr.com/services/rest/?jsoncallback=?';
   $.getJSON(flickrURL, flickrQueryObject).done(function(data){
     console.log(data);
@@ -19,10 +19,10 @@ var searchFlickr = function () {
       displayPhoto(photoURL, linkURL);
     }
     if (data.photos.pages === flickrQueryObject.page) {
-      complete = true;
+      photoShowComplete = true;
       $('#results').append($('<h1>').text("that's it buddy"));
     } else {
-      complete = false;
+      photoShowComplete = false;
     }
   });
 };
@@ -70,7 +70,7 @@ $(document).ready(function(){
   });
 
   setInterval(function () {
-    if (!complete) {
+    if (!photoShowComplete) {
       var niceHeight = $(document).height() - $(window).scrollTop();
       if (niceHeight < $(window).height()*5) {
         searchFlickr();
