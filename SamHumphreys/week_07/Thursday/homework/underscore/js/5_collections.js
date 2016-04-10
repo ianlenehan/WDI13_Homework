@@ -26,7 +26,6 @@ var names = _.each(people, function(person){
   // compiled = template({name: person.username});
   return person.username;
 });
-
 console.log(names);
 
 
