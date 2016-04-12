@@ -1,0 +1,134 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Reenie+Beanie);
+@import url(https://fonts.googleapis.com/css?family=Arimo);
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> * {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #ba1300;
+}
+.container {
+  background: linear-gradient(white, white, #ba1300);
+  max-width: 960px;
+  margin: 0 auto;
+  height: 500px;
+}
+nav {
+  background-color: black;
+}
+nav ul {
+  padding-left: 0;
+  color: white;
+  display: inline-block;
+  width: 70%;
+  text-align: right;
+}
+nav li {
+  font-family: 'Poiret One', cursive;
+  list-style: none;
+  display: inline-block;
+  padding: 20px;
+}
+nav li:hover {
+  background-color: #ba1300;
+  color: white;
+}
+nav a {
+  color: lightgrey;
+  text-decoration: none;
+}
+.symbols {
+  display: inline-block;
+  color: white;
+  text-align: left;
+  width: 20%;
+  padding: 15px;
+}
+.title {
+  font-family: 'Poiret One', cursive;
+  font-size: 50px;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+.quote {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 38px;
+  display: inline-block;
+  width: 65%;
+  padding: 1em;
+  line-height: 50px;
+}
+.quote p {
+  font-family: 'Poiret One', cursive;
+  font-size: 24px;
+  text-align: right;
+  padding-right: 50px;
+}
+.body {
+  display: inline-block;
+  width: 65%;
+  height: 375px;
+  overflow: scroll;
+}
+.map {
+  width: 400px;
+  margin: 0 0 0 50px;
+}
+.body p {
+  font-family: 'Arimo', sans-serif;
+  font-size: 16px;
+  line-height: normal;
+  text-align: left;
+  padding: 20px 50px 0 50px;
+}
+.body h2 {
+  font-family: 'Arimo', sans-serif;
+  font-size: 22px;
+  text-decoration: bold;
+  line-height: normal;
+  text-align: left;
+  padding: 20px 50px 0 50px;
+}
+.side {
+  display: inline-block;
+  width: 18%;
+  padding: 1em;
+  vertical-align: top;
+}
+.side img {
+  max-width: 200px;
+  border-radius: 100%
+}
+.bottom {
+  margin: 0 auto;
+  width: 960px;
+  padding-left: 300px;
+  padding-bottom: 50px;
+}
+.bottom img {
+  max-height: 100px;
+}
+.flag {
+  display: inline-block;
+  padding-right: 150px;
+}
+.ruby {
+  display: inline-block;
+  padding-right: 150px;
+}
+.heroku {
+  display: inline-block;
+  padding-right: 150px;
+}
+footer {
+  color: lightgrey;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  line-height: 30px;
+}
+footer p {
+  padding: 20px;
+  font-family: 'Poiret One', cursive;
+  font-size: 14px;
+}

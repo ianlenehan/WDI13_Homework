@@ -1,0 +1,22 @@
+<h3>  <%= @pokemon_single.name %></h3>
+
+<div class="pokemon-container">
+
+  <p>
+    Generation:
+    <%= @pokemon_single.generation %>
+  </p>
+
+  <p>
+    Type:
+    <%= @pokemon_single.pokemontype %>
+  </p>
+
+  <img class="pokemon-large" src="<%= @pokemon_single.image %>">
+
+  <div class="controls-container">
+    <a class="button" href="/pokemon/<%= @pokemon_single.id %>/edit">Edit</a>
+    <a class="button" href="/pokemon/<%= @pokemon_single.id %>/delete">Delete</a>
+  </div>
+
+</div>

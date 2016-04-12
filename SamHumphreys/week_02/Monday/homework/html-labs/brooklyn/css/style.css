@@ -1,6 +1,18 @@
+<<<<<<< HEAD
 /* 
 
 ## Style Hints: 
+=======
+<<<<<<< HEAD
+/* 
+
+## Style Hints: 
+=======
+/*
+
+## Style Hints:
+>>>>>>> 90d3fc8d7b98d78501f2bd15e567585fec295bc8
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3
 
 Body Font Size = 12px
 	 Line Height = 17px
@@ -10,3 +22,50 @@ Body Font Size = 12px
 Link Hover Color = #20222a
 
 */
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+body {
+	font-size: 12px;
+	line-height: 17px;
+	font-family: "Times New Roman", serif;
+	color: #656565;
+	margin-left: 70px;
+	width: 960px;
+}
+
+header {
+	color: #9d9e9d;
+	margin-top: 40px;
+	margin-bottom: 21px;
+	font-size: 28px;
+}
+
+footer {
+	border-top: 10px;
+}
+
+img {
+	padding: 1px;
+	width: 960px;
+	margin-bottom: 4px;
+}
+
+.sponsorPics img {
+	display: inline-block;
+	border: 5px solid #cfcfcf;
+	width: 225px;
+}
+
+.date {
+	color: #3789c1;
+}
+
+a {
+	text-decoration: none;
+	color: #3789c1;
+}
+>>>>>>> 90d3fc8d7b98d78501f2bd15e567585fec295bc8
+>>>>>>> 0b2a8bab9cc44512f44cbc1a04a2a521246246e3

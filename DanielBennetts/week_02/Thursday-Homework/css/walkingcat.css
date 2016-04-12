@@ -1,0 +1,13 @@
+body {
+  background: url('http://images.designtrends.com/wp-content/uploads/2015/12/14093249/Trippy-Cat-Background.jpg')
+}
+
+#nyan {
+  transform: scaleX(-1);
+}
+
+#toast {
+  display: block;;
+  text-align: center;
+  margin: 0 auto;
+}
