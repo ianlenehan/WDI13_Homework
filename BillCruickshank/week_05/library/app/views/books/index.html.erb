@@ -1,0 +1,12 @@
+<h1>All Books</h1>
+<h3>All the Time</h3>
+
+<% @books.each do |b| %>
+  <p>
+    <% if not b.cover.present %>
+      <%= link_to(b.title, b) %>
+    <% else %>
+      <%= link_to(image_tag(b.cover), b) %>
+    <% end %>
+  </p>
+<% end %>

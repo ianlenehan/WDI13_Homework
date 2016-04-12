@@ -1,0 +1,13 @@
+The number is somewhere in here...
+<% avg = (@low + @high) / 2 %>
+<% (@low..avg).to_a.each do |i| %>
+<form action="/number/<%= i + 1 %>/<%= @high %>">
+  <button type="submit"><%= i %></button>
+</form>
+<% end %>
+<% ((avg+1)..@high).to_a.each do |i| %>
+<form action="/number/<%= @low %>/<%= i-1 %>">
+  <button type="submit"><%= i %></button>
+</form>
+<% end %>
+</form>

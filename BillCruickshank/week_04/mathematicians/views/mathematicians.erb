@@ -1,0 +1,7 @@
+<% @mathematicians.each do |m| %>
+<p>
+  <a href="/mathematicians/<%= m["id"] %>">
+    <%= m["name"] %>    
+  </a>
+</p>
+<% end %>
