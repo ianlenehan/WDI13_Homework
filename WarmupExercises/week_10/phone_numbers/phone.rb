@@ -37,6 +37,12 @@ class Phone
         "(#{area_code}) #{middle}-#{last}"
     end
 
+    # Thanks to The Hammer for this cleaner, alternative 'to_s' method:
+    # def to_s
+    #     @number =~ /(\d{3})(\d{3})(\d+)/
+    #     "(#{$1}) #{$2}-#{$3}"
+    # end
+
     def valid(number)
         # REQUIREMENT: If the phone number is 11 digits and the first number is not 1, then it is a bad number
         # REQUIREMENT: If the phone number is 11 digits and the first number is 1, trim the 1 and use the first 10 digits
