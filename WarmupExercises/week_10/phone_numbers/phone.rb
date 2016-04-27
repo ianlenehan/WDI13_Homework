@@ -40,7 +40,14 @@ class Phone
     # Thanks to The Hammer for this cleaner, alternative 'to_s' method:
     # def to_s
     #     @number =~ /(\d{3})(\d{3})(\d+)/
-    #     "(#{$1}) #{$2}-#{$3}"
+    #     return "(#{$1}) #{$2}-#{$3}"
+    # end
+    
+    # And this absolute face-melter that I can't get my head around:
+    # def to_s
+    #     match =~ @number.match(/regex/)
+    #     area, prefix, rest = match.captures
+    #     return "(#{area}) #{prefix}-#{rest}"
     # end
 
     def valid(number)
