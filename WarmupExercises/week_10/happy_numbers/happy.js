@@ -1,3 +1,5 @@
+// Solution from the demo
+
 var found = 0;
 
 for(var i = 1; found < 10; i++) {
@@ -37,6 +39,34 @@ function sum_of_digit_squares(num){
     sum += +numstr[i] * +numstr[i];
   }
 
-  return sum;
+// Here's an official solution, using mathy modulus tricks to get the individual digits of a number, instead of treating the number as a string. However, it's a little harder to work out what this code is doing
 
-}
+// function happy(number) {
+//     var m, digit ;
+//     var cycle = [] ;
+
+//     while(number != 1 && cycle[number] !== true) {
+//         cycle[number] = true ;
+//         m = 0 ;
+//         while (number > 0) {
+//             digit = number % 10 ;
+//             m += digit * digit ;
+//             number = (number  - digit) / 10 ;
+//         }
+//         number = m ;
+//     }
+//     return (number == 1) ;
+// }
+
+// var cnt = 8 ;
+// var number = 1 ;
+
+// while(cnt-- > 0) {
+//     while(!happy(number))
+//         number++ ;
+//     document.write(number + " ") ;
+//     number++ ;
+// }
+//   return sum;
+
+// }
