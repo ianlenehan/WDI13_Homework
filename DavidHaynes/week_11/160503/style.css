@@ -1,0 +1,29 @@
+#main {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.cell {
+  height: 50px;
+  width: 50px;
+  display:inline-block;
+  border: 1px solid black;
+}
+
+.robot {
+  max-width: 100%;
+
+}
+
+.north {
+  transform: rotate(180deg);
+}
+.east {
+  transform: rotate(270deg);
+}
+.south {
+  transform: rotate(0deg);
+}
+.west {
+  transform: rotate(90deg);
+}
