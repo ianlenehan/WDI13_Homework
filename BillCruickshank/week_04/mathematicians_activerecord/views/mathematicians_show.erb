@@ -1,0 +1,13 @@
+<% m = @mathematician %>
+ <h3><%= m.name %></h3>
+ <p><%= m.circa %></p>
+ <p> Famous for: <%= m.fame %> </p>
+ <p><a href="<%= m.link_url %>"><%= m.link_title %></a></p>
+<img src="<%= m.img %>" alt="">
+
+<footer>
+  <ul>
+    <li><a href="/mathematicians/<%= m.id %>/delete">Delete</a></li>
+    <li><a href="/mathematicians/<%= m.id %>/edit">Edit</a></li>
+  </ul>
+</footer>

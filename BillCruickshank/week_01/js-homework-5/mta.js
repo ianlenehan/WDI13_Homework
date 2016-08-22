@@ -127,7 +127,7 @@ l.tripPlanner("8th", "Times Square");
 var test = function (n1, l1, n2, l2) {
   console.log("--");
   console.log(n1,l1,n2,l2);
-  console.log("-")
+  console.log("-");
   mta.tripPlanner(n1,l1,n2,l2);
   console.log("--");
 }

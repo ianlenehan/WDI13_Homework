@@ -1,0 +1,17 @@
+<h2>Edit Ocean</h2>
+
+<form action="<%= ocean_path @ocean.id %>" method="POST">
+  <label>Name: </label>
+  <input type="text" name="name" value="<%= @ocean.name %>">
+  <br>
+  <label>Area (km<sup>2</sup>): </label>
+  <input type="number" name="area" value="<%= @ocean.area %>">
+  <br>
+  <label>Deepest Depth (m): </label>
+  <input type="number" name="deepest" value="<%= @ocean.deepest %>">
+  <br>
+  <label>Percentage of Earths Water: </label>
+  <input type="number" name="percentage" value="<%= @ocean.percentage %>">
+  <br>
+  <input type="submit" value="Update Ocean">
+</form>

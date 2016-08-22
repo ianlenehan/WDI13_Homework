@@ -1,0 +1,9 @@
+img {
+  position: absolute;
+}
+
+button {
+  background-color: white;
+  border: 1px solid tomato;
+  border-radius: 1em;
+}

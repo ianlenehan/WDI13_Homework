@@ -1,0 +1,27 @@
+<% @m = @mathematician[0] %>
+
+<form action="/mathematicians/<%= @m["id"] %>" method="post">
+  <p>
+    <label>Name : </label>
+    <input type="text" name="name" value="<%= @m["name"] %>">
+  </p>
+  <p>
+    <label>Dates (circa) : </label>
+    <input type="text" name="circa" value="<%= @m["circa"] %>">
+  </p>
+  <p>
+    <label>Famous for : </label>
+    <input type="text" name="fame" value="<%= @m["fame"] %>">
+  </p>
+  <p>
+    <label>Link URL : </label>
+    <input type="text" name="link_url" value="<%= @m["link_url"] %>">
+    <label for="">Link Text : </label>
+    <input type="text" name="link_title" value="<%= @m["link_title"] %>">
+  </p>
+  <p>
+    <label for="">Image URL : </label>
+    <input type="text" name="img" value="<%= @m["img"] %>">
+  </p>
+  <input type="submit" value="Update">
+</form>
